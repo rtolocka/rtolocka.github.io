@@ -1,0 +1,30 @@
+---
+layout: default
+title: Rich Tolocka
+---
+
+<div class="row">
+	<div class="large-8 columns">
+		{% for post in site.posts limit:1 %}
+		<h3>{{ post.title }}</h3>
+		<p>{{ post.date | date: "%d %B %Y"}}</p>
+		<p>{{ post.categories }} </p>
+		<p>{{ post.content }}</p>
+		{% endfor %}
+	<a href="#" class="medium secondary button">Next Post</a>
+	</div>
+	<div class="large-4 columns">
+		<h3>Recent blog posts</h3>
+		<ul>
+		{% for post in site.posts %}
+	      	<a href="{{ post.url }}">{{ post.date | date: "%d %B %Y"}} - {{ post.title }}<br></a>
+		{% endfor %}
+		</ul>
+	</div>
+	<div class="large-4 columns">
+		<h3>Other items</h3>
+		<li>Some menu link</li>
+		<li>Some menu link</li>
+		<li>Some menu link</li>
+	</div>
+</div>

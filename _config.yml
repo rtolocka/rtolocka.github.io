@@ -1,5 +1,3 @@
-source:      ./_posts
-destination: ./_site
 plugins:     ./_plugins
 layouts:     ./_layouts
 include:     ['.htaccess']

@@ -1,0 +1,7 @@
+---
+layout: post
+title: hurray america
+categories: [ruby, rails, whatevs]
+---
+
+ANother testarooni!
