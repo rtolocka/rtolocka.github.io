@@ -1,0 +1,46 @@
+---
+title: Demystifying Ruby... but not too much (pt. 2)
+categories: [ruby]
+---
+As a long time Java programmer who has made the switch to Ruby, I've honed in a few things that once understood, help make Ruby a lot more readable and fun for those coming from similar backgrounds. I'll tackle these below in this post.
+
+<!--more-->
+<h3>Symbols</h3>
+What is a symbol? Symbols defy a clean explanation, and are the subject of countless blog posts basically saying that. My definition: a symbol is a non-mutable storage device for a String value. As a reformed Java developer, I see them as a far less verbose (and safer) alternative to something like the following:
+<pre>private static final String WOW_THIS_TAKES_A_LOT_OF_TYPING = "fahrenheit"
+thermostat.some_method(WOW_THIS_TAKES_A_LOT_OF_TYPING)</pre>
+Let's try this instead:
+<pre>thermostat.some_method(:fahrenheit)</pre>
+Symbols are critical to learn prior to taking on Hash options, my next subject, as they are significantly intermingled.
+<h3><span style="font-size: 1.17em; font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; line-height: 19px;">Hash options</span></h3>
+Ruby allows for the setting of default values for method parameters. In order to prevent wasting time repeatedly passing in null values like the following example:
+<pre>thermostat.do_something_im_freezing(top_temp, current_temp, null, null, null)</pre>
+Ruby allows you to pass in only the values you need for that situation. This is accomplished through code like the following:
+<pre><code>class Theromostat </code></pre>
+<pre><code>def </code>do_something_im_freezing(options = {})</pre>
+<pre><code> options = {top_temp: 85, current_temp: 65, emergency_heat: false, auxiliary_heat: false}.merge(options)</code></pre>
+<pre><code></code><code>end</code></pre>
+This can now be flexibly invoked like this:
+<pre>thermostat.do_something_im_freezing(:top_temp=&gt;80, current_temp=&gt;70)</pre>
+<h3><span style="font-size: 1.17em; font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; line-height: 19px;">Each</span></h3>
+Each is the generally preferred "Ruby way" of looping through a data structure. It's fairly simple, but there are a few variations to be aware of. The first example is an each statement that only contains a single line of code. This non-verbose variant is as follows:
+<pre>houses.each { | house | house.turn_off_heat_freeze_occupants | }</pre>
+For the Rails guys, you'll note that there is no reverse pluralization going on here - we could have replaced 'house' with 'dog' and it would have worked fine.
+
+To extend your code across multiple lines of code, use the "do" statement. That looks like:
+<pre>houses.each do | house |</pre>
+<pre>   house.turn_off_heat_freeze_occupants</pre>
+<pre>   house.play_maniacal_laughing_sound_effect</pre>
+<pre>end</pre>
+There is another "each" variant to be aware of, surrounding hashes. To loop through a hash, you can use a very similar syntax that is fairly self explanatory; note that the first value is the key and the second is the value:
+<pre><span style="font-family: Consolas, Monaco, monospace; font-size: 12px; line-height: 18px;">houses.each { | last_name, house | puts last_name | }</span></pre>
+or
+<pre>houses.each do | last_name, house |</pre>
+<pre>   puts last_name</pre>
+<pre>   house.turn_off_heat_freeze_occupants</pre>
+<pre>end</pre>
+<h3>And Some Candy</h3>
+Lest this post be completely dry, here's some Ruby sugar. Most Java guys will have done "count off" loops, iterating through your code block until some counter has reached a literal number, like 5. In Ruby, do this instead:
+<pre>5.times do</pre>
+<pre>   puts " Just what do you think you're doing, Dave?"</pre>
+<pre>end</pre>

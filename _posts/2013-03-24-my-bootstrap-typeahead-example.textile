@@ -1,0 +1,38 @@
+---
+title: My bootstrap typeahead example
+categories: [bootstrap, rails]
+---
+
+After struggling for a few weeks (well, a few weeks at night, when not practicing banjo or hanging with my gal instead of doing development), I got my bootstrap typeahead working, all on my own. Well, actually, with the help of these guys:
+<ul>
+	<li><a href="http://mark.stratmann.me/content_items/model-driven-typeahead-inputs-with-bootstrap-2-2-2-rails-3-2">Mark Stratmann's blog post</a></li>
+	<li><a href="http://www.webmaster-source.com/2012/11/07/getting-more-from-twitter-bootstraps-typeahead-library/">Not sure who this guy is but his post helped too</a></li>
+</ul>
+So, in the spirt of sharing as well as possibly helping somebody else navigate this less-than-explicitly documented method, here's my typeahead code, along with a tip down below that might help others.
+
+<!--more-->
+<h4>Controller Code</h4>
+<pre># JSON only
+ def names
+    @names = Title.pluck(:name)
+    render :json =&gt; @names, :content_type =&gt; Mime::JSON
+ end</pre>
+<h4>View Code</h4>
+<pre>&lt;%= text_field_tag :searchfield, params[:search] %&gt;</pre>
+<h4>JS typeahead declaration</h4>
+<pre>&lt;script&gt;
+$(document).ready(function() {
+ $("#searchfield").typeahead({
+    minLength: 1,
+    source: function(query, process) {
+       $.get('/titles/names', { q: query, limit: 8 }, function(data) {
+          process(data);
+ });
+ }
+ });
+});
+&lt;/script&gt;</pre>
+<h4>A difference...</h4>
+Most examples have a
+<pre>"<span style="font-family: Consolas, Monaco, monospace; font-size: 12px; line-height: 18px;">process(JSON.parse(data));"</span></pre>
+where I'm just calling "process(data)", but this caused me an error, something along the lines of "Invalid Token A". I switched to "JQuery.parseJSON" - that didn't work either. After doing some debugging and coming to the conclusion that it was valid JSON being returned, I simply removed the parse calls and all worked fine... I guess I'll figure out why down the line.

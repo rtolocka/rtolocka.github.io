@@ -1,11 +1,15 @@
 ---
 layout: default
 ---
+<div class="row">
+<div class="large-8 columns">
 <div id="post">
 	<h1>{{ page.title }}</h1>
 	<p class="meta">{{ page.date | date_to_string }}</p>
 	{{ content }}
 </div>
+</div>
+<div class="large-4 columns">
 {% if site.related_posts != empty %}
 <div id="related">
   <h2>Related Posts</h2>
@@ -16,18 +20,5 @@ layout: default
   </ul>
 </div>
 {% endif %}
-<div class="comments">
-	<h3>Comments</h3>
-	<noscript>Please enable JavaScript to view the comments</noscript>
-	<div id="disqus_thread"></div>
-</div>
-<script type="text/javascript">
-    var disqus_shortname = 'rogchap'; 
-    var disqus_identifier = '{{ page.id }}';
-    var disqus_url = '{{ site.url }}{{ page.url }}';
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
+<div>
+

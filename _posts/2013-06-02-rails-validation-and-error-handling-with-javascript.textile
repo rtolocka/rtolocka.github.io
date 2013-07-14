@@ -1,0 +1,52 @@
+---
+title: Rails validation and error handling when using Javascript
+categories: [rails, ruby]
+---
+This blog deals with the mechanics of passing validations and errors back to your view when using Javascript calls to your controller layer.
+
+<!--more-->
+
+Many many blog posts have dealt with this subject, and there are about 100 ways to attack this problem. This one is mine; I don't claim it to be perfect; instead I'll use it to highlight a few Rails features as we progress.
+<h3><span style="font-size: 1.17em;">The flash</span></h3>
+My entire strategy hinges on the idea that the Flash is a good thing for validation and error handling. My thinking was: everybody uses the Flash (don't we?) or at least knows about it, therefore this seems understandable and quite conventional.
+
+The following code re-opens ActionController and leverages Rails' filter features to push messages stored in the Flash over to the response header:
+<pre>class BaseController &lt; ApplicationController
+after_filter :move_flash_to_headers</pre>
+<pre>def move_flash_to_headers
+ return unless request.xhr?
+ response.headers['X-Message'] = flash[:error] unless flash[:error].blank?
+ response.headers['X-Message'] = flash[:warning] unless flash[:warning].blank?</pre>
+<h3>Message Handler</h3>
+Now that your error messages are in the headers, you need to write code (hopefully re-usable) that will allow for those header messages to be displayed to the user without a ton of per-class configuration or code. Accordingly, I put a new js handler into the pipeline called message_handler.js:
+<pre>$(document).ajaxComplete(function(e, request, opts) { 
+ msg = request.getResponseHeader('X-Message');
+ $(".errors").hide();
+ $(".errors").html(request.getResponseHeader('X-Message'));
+ $(".errors").slideDown();
+});</pre>
+<h3>Getting It Into the View</h3>
+Now that we have some global message handing in place, we'll want to get this code firing in our view classes. For me, this was as simple as adding an errors div into my _messages.html.erb partial, as follows:
+<pre>&lt;div class="errors"&gt;
+&lt;/div&gt;</pre>
+<h3>Controller Handling</h3>
+Finally, we need to adjust our controller to put our error messages into the flash. This is really the only portion of this code that isn't (in my opinion) DRY:
+<pre>def create
+ @title = Title.new(params[:title])
+ if @title.save
+    @titles = Title.all
+    flash[:notice] = "You've created a new title!"
+    render 'titles/results.js.erb'
+ else
+    @title.errors.each do |attribute, errors_array|
+    field_errors = attribute.to_s + " " + errors_array
+    flash[:error] = field_errors
+ end</pre>
+<h3>Critiques</h3>
+My own critique of this code follows:
+<ul>
+	<li>Are we properly handling multiple errors and/or validations? Not sure yet.</li>
+	<li>Does this handle really fatal scenarios? Doubt it.</li>
+	<li>Why all go through all the work to put the messages into the flash when you could probably write some code to put them into the response directly? Dagger!</li>
+</ul>
+<pre></pre>
