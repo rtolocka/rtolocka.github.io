@@ -1,5 +1,6 @@
 ---
 title: A conceptual understanding of blocks
+layout: post
 categories: [ruby]
 ---
 

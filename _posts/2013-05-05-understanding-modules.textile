@@ -1,5 +1,6 @@
 ---
 title: Understanding Modules
+layout: post
 categories: [development, rails, ruby]
 ---
 Modules are a great gateway to understanding some key features of both Ruby and Rails.

@@ -1,5 +1,6 @@
 ---
 title: My bootstrap typeahead example
+layout: post
 categories: [bootstrap, rails]
 ---
 

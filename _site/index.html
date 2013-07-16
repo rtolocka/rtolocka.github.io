@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="/css/foundation.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="/css/normalize.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="/css/foundation-min.css" type="text/css" media="screen and (min-width:651px) and (max-width: 1024px), screen and (min-device-width: 768px) and (max-device-width: 1024px)" />
+	<script src="pager.js"/>        
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-4155555-8']);
@@ -30,27 +31,39 @@
 	<div class="row">
 	<div class="large-8 columns">
 		
-		<h3>Blogging like a boss</h3>
-		<p>10 July 2013</p>
-		<p>rubyrailssushi </p>
-		<p><p>Whoa, here is some super cool content.</p>
-<ul>
-	<li>Like</li>
-	<li>A</li>
-	<li>Boss</li>
-</ul></p>
+		<h3>Mastering your Ruby Environment</h3>
+		<p>05 July 2013</p>
+		<p>rbenvruby </p>
+		<p><p>
+<p>Recently I had an issue where a Gem wouldn&#8217;t install properly. As it turned out, I was using the wrong <em>type</em> of ruby (more specifically I was using plain ruby instead of ruby-dev, which is a whole other blog post for another day). This ended up being a great opportunity for a blog post on &#8216;mastering your ruby environment.&#8217; Like many of my posts, this one is oriented towards basic knowledge that beginners can use.</p></p>
+<h3>What version of Ruby are you running?</h3>
+<p>To determine which version of Ruby is being invoked from the shell, this is relatively straight-forward:</p>
+<pre>ruby --version</pre>
+<p>This will tell you which version of Ruby you&#8217;re running, but it&#8217;s often helpful to know where this version of Ruby is installed. For this, run the Linux command:<br />
+<code>which ruby</code><br />
+Depending on what the output is, you&#8217;ll either be shocked or quite bored. Either way, take a look at your $<span class="caps">PATH</span> variable to confirm your suspicions about how your particular version of Ruby is being loaded:<br />
+<pre>echo $<span class="caps">PATH</span></pre><br />
+<h3>Switching it up</h3><br />
+Should you find yourself wanting to change your Ruby version, it&#8217;s important to proceed with caution. Ruby comes installed on your system because it&#8217;s likely to be used by system programs &#8211; therefore, it&#8217;s not a good idea to be removing it or upgrading it in place. Instead, there are a variety of tools used to allow you to switch between various versions of Ruby as needed for development purposes.</p>
+<p>The first of these tools is <span class="caps">RVM</span>. Short for Ruby Version Manager, <span class="caps">RVM</span> does &#8216;a lot&#8217; in one package. The second of these tools is rbenv. Rbenv is more modular, using plug-ins to do things like <a href="https://github.com/sstephenson/ruby-build">install particular versions of Ruby</a> or <a href="http://www.bundler.io">manage gem sets</a>. My personal preference is for rbenv, but that&#8217;s probably because, as a Java developer, I&#8217;m more comfortable with the manner in which rbenv works &#8211; by manipulating your <span class="caps">PATH</span>.</p>
+<p>Installing rbenv is pretty straight ahead; I&#8217;d highly recommend you install a version of Ruby or two and then switch between them, running ruby &#8212;version to confirm that rbenv is working as it should:<br />
+<pre>rbenv global 1.9.3-dev</pre><br />
+In this example, we&#8217;re changing the global version of Ruby. Note that rbenv also allows you to change the local version &#8211; by &#8216;local&#8217;, we mean specific to any particular application located in the folder where we execute the command. The &#8216;local&#8217; version will override the &#8216;global&#8217; version.<br />
+<h3>Gems</h3><br />
+So, now that you&#8217;ve got your Ruby environment squared away, back to those Gems. The easiest way to evaluate your RubyGems installation is to type:<br />
+<pre>gem env</pre><br />
+This will tell you which version of RubyGems you&#8217;re running, and which versions of Ruby that RubyGems is using to run. Fun fact: to find out which Gems you have installed (useful if you have a botched install like I did and want to confirm what Gems survived and which did not), you can run<br />
+<pre>gem server</pre><br />
+and then visit http://localhost:8808. You&#8217;ll see a listing of all your Gems with convenient links back to their home pages, etc.</p>
+<p>&nbsp;</p></p>
 		
-	<a href="#" class="medium secondary button">Next Post</a>
+	<a href="/page2/index.html" class="medium secondary button">Next Post</a>
 	</div>
 	<div class="large-4 columns">
 		<h3>Recent blog posts</h3>
 		<ul>
 		
-	      	<a href="/ruby/rails/sushi/2013/07/10/this-is-a-test-post.html">10 July 2013 - Blogging like a boss<br></a>
-		
 	      	<a href="/rbenv/ruby/2013/07/05/mastering-your-ruby-environment.html">05 July 2013 - Mastering your Ruby Environment<br></a>
-		
-	      	<a href="/ruby/rails/whatevs/2013/07/04/happy-4th-of-july.html">04 July 2013 - hurray america<br></a>
 		
 	      	<a href="/ruby/2013/06/16/a-conceptual-understanding-of-blocks.html">16 June 2013 - A conceptual understanding of blocks<br></a>
 		

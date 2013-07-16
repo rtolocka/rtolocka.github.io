@@ -1,5 +1,6 @@
 ---
 title: Rails validation and error handling when using Javascript
+layout: post
 categories: [rails, ruby]
 ---
 This blog deals with the mechanics of passing validations and errors back to your view when using Javascript calls to your controller layer.

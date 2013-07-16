@@ -1,5 +1,6 @@
 ---
 title: Ruby strings - cheatsheet
+layout: post
 categories: [development, ruby]
 ---
 Ahh... cheat sheets; the weekend programmer's crutch. Nobody likes a cheater...

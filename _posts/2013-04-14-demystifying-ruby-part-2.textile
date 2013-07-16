@@ -1,5 +1,6 @@
 ---
 title: Demystifying Ruby... but not too much (pt. 2)
+layout: post
 categories: [ruby]
 ---
 As a long time Java programmer who has made the switch to Ruby, I've honed in a few things that once understood, help make Ruby a lot more readable and fun for those coming from similar backgrounds. I'll tackle these below in this post.
