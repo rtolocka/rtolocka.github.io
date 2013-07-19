@@ -1,0 +1,36 @@
+Ok, dumb title. The point of this blog post (first of two) is to cover a few of what I think are the most important and basic Ruby-isms for a reforming Java developer to learn. The quicker you learn these, the fast you'll be off and reading Ruby. This post covers the easy stuff; the next will cover symbols, hash options, and the each statement.
+<h3>Console output</h3>
+If you're a lazy logger like me, you've probably used the following convention a lot during the course of normal day-to-day development:
+<pre>System.out.println("Wow I've typed that a lot over the last 15 years…")</pre>
+The Ruby gods have destroyed this for the crime of being too verbose. Check this:
+<pre>puts "Wow, my fingers feel awesome"
+p "They don't hurt like they used to!"</pre>
+<h3>The "pound bracket"</h3>
+You might be used to doing "in-string" expressions like the following in Java -
+<pre>String myDog = "Border Terrier";
+System.out.println("My dog is a" + myDog.toUpperCase());
+System.out.println("He's about " + (7 + 4) + " years old.);</pre>
+The pound bracket semantic is used to allow for more concise handling of in-string operations. For example, see the following -
+<pre>p "My dog is a #{'border terrier'.upcase}"
+p 'I got him about #{4+3} years ago' # ooops, botch-a-rific</pre>
+The second example is illustrative of the difference between single quotes and double quotes - single quotes are not evaluative for expressions. This will work just fine:
+<pre>p 'I got him about #{4+3} years ago' # whew!</pre>
+<h3>Incrementing variables</h3>
+A pretty basic Java concept is the increment operator. For example, you might count off a loop sequence using the following convention:
+
+while ( i &lt; 10)
+{
+// do something cool, act naturally
+// i++
+}
+
+As a (reforming) Java developer you might be stunned to find out that this convention doesn't exist in Ruby. Well, maybe not stunned... Instead, this is the Ruby increment operator:
+<h4>i += 1</h4>
+<h3>Return to Me</h3>
+Unlike Java, Ruby does not require you to declare a method as returning anything of any particular type. Likewise, a Ruby method doesn't require you explicitly return something in order to return something, dig? So, for example, the following code returns the last evaluated expression:
+<pre>def say_adios(name)
+   “Goodbye, ” + name
+end</pre>
+Some Java developers can't stand this, claiming it's difficult to read and can make it hard to figure out where your method is exiting and what value it's returning, particularly when you have a complex series of exiting loops. They argue that sometimes it's better to use explicit returns to make your code clearer and more concise.
+
+In general, I agree with that, but can't deny it's really convenient to not have to type that extra return statement for a relatively short utility method.

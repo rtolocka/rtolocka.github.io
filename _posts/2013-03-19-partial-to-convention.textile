@@ -1,0 +1,18 @@
+Partials are an intriguing part of Rails for me. I've had mixed results with dynamic inclusion going back to the days &lt;jsp:include&gt;. It was possible to get some fair-to-middling code re-use going, but exceptional cases and the extra wiring required made it difficult to maintain in practice. Rails use of convention allows you to avoid explicit wiring together of Views and Partials and allow for some huge time saving conveniences. Some basics first:
+<h3>Naming Conventions</h3>
+Partials get an underscore in their name to distinguish them from ordinary views. Yet, within the context of a view, you reference the partial without the underscore. For example, '_title.html.erb' can be called using:
+<pre>&lt;% render "title" %&gt;</pre>
+<h3>JQuery and Partials</h3>
+If you're seeking to refresh a portion of your page using JQuery, you'll need to get smart on partials. That's because the mechanism to re-render a portion of your view uses... you guessed it, the "render" statement. Rails is smart enough to return a .js.erb template for remote calls. So, you can put a render statement into that .js.erb that can update any referenced ID on the page.
+
+So, let's imagine you're refreshing a list of book titles based on user search via AJAX. You'll need something like this in a 'search.js.erb' -
+<pre>$("#book-list-table-body").html("&lt;%= escape_javascript(render(@books))%&gt;");</pre>
+In this case, this requires the book list itself to be built using a partial to allow for this form of directed construction.
+<h3>Let's Get Conventional</h3>
+Rails is smart enough to render a view called 'book.html.erb' if you render @book. But upon running the previous <code>'render(@books)'</code> code, you get an error like,
+<pre><code>Missing partial books/book</code></pre>
+Hmm...what's that all about? Well, turns out Rails is smart enough to know that you're rendering a collection of books, and will iterate through your collection using the '_book.html.erb' partial.
+
+So awesome. Any old-school Java programmer who's wasted years iterating through collections to output HTML table content can appreciate the beauty and simplicity of this approach. Have I revealed too much? :-)
+
+&nbsp;
