@@ -1,14 +1,18 @@
 ---
-title: Understanding Modules
+title: Understanding Ruby Modules
 layout: post
 categories: [development, rails, ruby]
 ---
 Modules are a great gateway to understanding some key features of both Ruby and Rails.
 
 <!--more-->
-<h3>The Basics</h3>
+
+<h4>The Basics</h4>
+
 It's notable that you can do a good bit of Rails development without noticing the innocuous "double dots" at the top of your ActiveRecord class. Here's an example, so you know what I'm referring to:
-<pre>class HauntedHouse &lt; ActiveRecord::Base</pre>
+
+<pre><code>class HauntedHouse < ActiveRecord::Base</code></pre>
+
 As a former C++/Java/.net/whatever developer, you'll probably intuit that the "&lt;" sign means "inherits from". Awesome. But about the "::" symbol? And under the covers, what the heck is "ActiveRecord::Base"?
 
 In this case, ActiveRecord is a module. Modules in Ruby have no strict corollary in other languages, but at minimum can be considered useful groupings of code for organizational purposes as well as prevention of namespace collisions. (they have other uses as well, more later).
@@ -16,22 +20,32 @@ In this case, ActiveRecord is a module. Modules in Ruby have no strict corollary
 The double-colons are used to establish the namespace for the Base class; in this case, Base is a class that "lives" within ActiveRecord. By establishing that this class lives within the ActiveRecord module, we now can be sure that we're inheriting from the *right* Base class.
 
 So is that all Modules are good for? Not even close. Modules are also used to conveniently provide functionality to other classes through inclusion or extension.
-<h3>Inclusion</h3>
+
+<h4>Inclusion</h4>
+
 What is inclusion all about? Well, shockingly, inclusion allows you to include another module's methods into your class for you to use as instance methods. The syntax is pretty easy.
-<pre>class HauntedHouse
+
+<pre><code>class HauntedHouse
  include PortalToHell
-end</pre>
-<pre>my_haunted_house = HauntedHouse.new
-my_haunted_house.openPortalToHell</pre>
+end</code></pre>
+<pre><code>my_haunted_house = HauntedHouse.new
+my_haunted_house.openPortalToHell</code></pre>
+
 Full coverage of inclusion is beyond this blog post, but the best known examples of inclusion in Ruby are Comparable and Enumerable. For each of these, for the cost of implementing a method for each (the "spaceship" and "each" methods, respectively) you get the benefit of all their methods at the instance level.
 
 These are examples of 'mix-ins' - Ruby doesn't support multiple inheritance, but similar to the way Java worked around this with interfaces, Ruby has provided mix-ins as a functional equivalent.
-<h3>Extension</h3>
+
+<h4>Extension</h4>
+
 You can also extend modules; this gives you the ability to utilize a modules' methods at the class level.
-<pre>class HauntedHouse
+
+<pre><code>class HauntedHouse
  extend ShamblingBeastFactory
-end</pre>
-<pre>HauntedHouse.buildShamblingBeast(:large_size)</pre>
+end</code></pre>
+<pre><code>HauntedHouse.buildShamblingBeast(:large_size)</code></pre>
+
 Note that the "Extension" terminology can be a bit confusing to some, particular those who view inheritance as a form of extension (here it isn't).
-<h3>Rails Concerns</h3>
+
+<h4>Rails Concerns</h4>
+
 It's worth mentioning here (and I may dedicate a blog post to this) that there is another method of code re-use being employed on the Rails side of life. Rails "Concerns" are a way of including functionality into another class, and is provided through the ActiveSupport module, a collection of Rails' utilities and part of Rails Core. More specifically, Concerns facilitates easy mix-in of code to the ActiveRecord class, which allows you to re-use code at a lower level without having to constantly include or extend functionality through, say, 200 ActiveRecord classes.

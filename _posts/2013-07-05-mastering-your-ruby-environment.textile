@@ -3,29 +3,42 @@ title: Mastering your Ruby Environment
 layout: post
 categories: [rbenv, ruby]
 ---
-<p>
-Recently I had an issue where a Gem wouldn't install properly. As it turned out, I was using the wrong <em>type</em> of ruby (more specifically I was using plain ruby instead of ruby-dev, which is a whole other blog post for another day). This ended up being a great opportunity for a blog post on 'mastering your ruby environment.' Like many of my posts, this one is oriented towards basic knowledge that beginners can use.</p>
+Recently I had an issue where a Gem wouldn't install properly. As it turned out, I was using the wrong <em>type</em> of ruby (more specifically I was using plain ruby instead of ruby-dev, which is a whole other blog post for another day). This ended up being a great opportunity for a blog post on 'mastering your ruby environment.' Like many of my posts, this one is oriented towards basic knowledge that beginners can use.
 
-<h3>What version of Ruby are you running?</h3>
-<p>To determine which version of Ruby is being invoked from the shell, this is relatively straight-forward:</p>
-<pre>ruby --version</pre>
+<!--more-->
+
+<h4>What version of Ruby are you running?</h4>
+To determine which version of Ruby is being invoked from the shell, this is relatively straight-forward:
+
+<pre><code>ruby --version</code></pre>
+
 This will tell you which version of Ruby you're running, but it's often helpful to know where this version of Ruby is installed. For this, run the Linux command:
-<code>which ruby</code>
+
+<pre><code>which ruby</code></pre>
+
 Depending on what the output is, you'll either be shocked or quite bored. Either way, take a look at your $PATH variable to confirm your suspicions about how your particular version of Ruby is being loaded:
-<pre>echo $PATH</pre>
-<h3>Switching it up</h3>
+
+<pre><code>echo $PATH</code></pre>
+
+<h4>Switching it up</h4>
 Should you find yourself wanting to change your Ruby version, it's important to proceed with caution. Ruby comes installed on your system because it's likely to be used by system programs - therefore, it's not a good idea to be removing it or upgrading it in place. Instead, there are a variety of tools used to allow you to switch between various versions of Ruby as needed for development purposes.
 
 The first of these tools is RVM. Short for Ruby Version Manager, RVM does 'a lot' in one package. The second of these tools is rbenv. Rbenv is more modular, using plug-ins to do things like <a href="https://github.com/sstephenson/ruby-build">install particular versions of Ruby</a> or <a href="http://www.bundler.io">manage gem sets</a>. My personal preference is for rbenv, but that's probably because, as a Java developer, I'm more comfortable with the manner in which rbenv works - by manipulating your PATH.
 
 Installing rbenv is pretty straight ahead; I'd highly recommend you install a version of Ruby or two and then switch between them, running ruby --version to confirm that rbenv is working as it should:
-<pre>rbenv global 1.9.3-dev</pre>
+
+<pre><code>rbenv global 1.9.3-dev</code></pre>
+
 In this example, we're changing the global version of Ruby. Note that rbenv also allows you to change the local version - by 'local', we mean specific to any particular application located in the folder where we execute the command. The 'local' version will override the 'global' version.
-<h3>Gems</h3>
+
+<h4>Gems</h4>
 So, now that you've got your Ruby environment squared away, back to those Gems. The easiest way to evaluate your RubyGems installation is to type:
-<pre>gem env</pre>
+
+<pre><code>gem env</code></pre>
+
 This will tell you which version of RubyGems you're running, and which versions of Ruby that RubyGems is using to run. Fun fact: to find out which Gems you have installed (useful if you have a botched install like I did and want to confirm what Gems survived and which did not), you can run
-<pre>gem server</pre>
+
+<pre><code>gem server</code></pre>
+
 and then visit http://localhost:8808. You'll see a listing of all your Gems with convenient links back to their home pages, etc.
 
-&nbsp;

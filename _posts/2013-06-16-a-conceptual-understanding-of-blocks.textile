@@ -5,33 +5,40 @@ categories: [ruby]
 ---
 
 Ruby blocks can easily be misunderstood as purely a control flow mechanism - particularly by Java developers who see the "do" and "yield" keywords and jump to a logical, if incorrect, conclusion.
-
 <!--more-->
-
 Like a lot of Ruby concepts, blocks are everywhere yet can be used without fully grokking the underlying concepts. One fundamental piece of understanding is that any time you see code contained within brackets, that is a block:
-<pre>5.times { "I'll never go to sleep with the lights off again." }</pre>
+
+<pre><code>5.times { puts "I'll never go to sleep with the lights off again." }</code></pre>
+
 Rather than viewing this as syntactical control flow, think of this as "We're going to pass this chunk of code to the 'times' method." Brackets can be replaced with a 'do' and 'end'; this is also a convenient way to immediately comprehend that a <em>block is about to happen:</em>
-<pre>5.times do
-   "I'll never go to sleep with the lights off again."
+
+<pre><code>5.times do
+   puts "I'll never go to sleep with the lights off again."
    pull_blanket_over_head
-end</pre>
+end</code></pre>
+
 Note that both of these examples can be misleading, as they still appear to be control flow mechanisms - nothing dynamic appears to be happening.
 
 Let's look at a more complicated example that uses block arguments. In this case, let's imaging a Monster_Collector class whose job it is to roam an area and collect all the monster men. Later, those monsters are processed. We can allow for some flexibility for what happens to the monster when processed through the use of blocks:
-<pre>def class Monster_Collector</pre>
-<pre>def process
-   <strong>// loop through all the monsters</strong>
-      monster.prep # do some stuff to the monster that always happens predictably, pre-processing, here.
+
+<pre><code>def class Monster_Collector
+def process
+      # loop through all the monsters, code omitted
+      # do some predictable pre-processing
+      monster.prep 
       yield(monster)
-      monster.banish # do some stuff to the monster that always happens predictably, post-processing, here.
-   <strong>// done looping</strong>
-end</pre>
-<pre>end</pre>
-<pre>monster_collector.process do | monster | <strong># 'monster' is a block argument - it will be passed into this block...</strong>
-   <strong># ...by the code we're passing the block into - neato, Ma!</strong>
+      # do some predictable post-processing
+      monster.banish 
+      # done looping
+end
+</code></pre>
+<pre><code>monster_collector.process do | monster | 
+   # 'monster' is a block argument - it will be passed into this block...
+   # ...by the code we're passing the block into - neato, Ma!
    monster.interrogate
    monster.search_for_clues
-end</pre>
+end</code></pre>
+
 Remember, it is helpful to view the above code after the "do" statement as being passed into the 'process' method. The 'monster'  argument (on which we call 'interrogate' and 'search_for_clues') is being yielded by the block-savvy method.
 
 Note that you could call 'process' without passing in a block at all - the code will simply bypass the yield statement as you might expect if you've done any degree of Ruby coding.
@@ -39,5 +46,3 @@ Note that you could call 'process' without passing in a block at all - the code 
 Any of the pattern-savvy developers will recognize this as the Strategy pattern; here, we're able to influence (at run-time) the outcome of the 'process' call without necessarily knowing too much about its contents. This allows us to avoid writing 'pointer-heavy' methods that execute code based on explicit direction; the above approach is more de-coupled.
 
 I'll pick this example up later for a more detailed examination of Procs as well as some variations on the above concept.
-
-&nbsp;

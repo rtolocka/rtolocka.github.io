@@ -5,60 +5,88 @@ categories: [development, ruby]
 ---
 Ahh... cheat sheets; the weekend programmer's crutch. Nobody likes a cheater...
 
-<!--more--><!--more-->
+<!--more-->
 
 This post is entirely selfish - a cheat sheet covering Ruby's string functions. This way, I guess I don't have to worry about losing it since its on my blog!
+
 <h3>Array join</h3>
+
 Not really a String method, I've included it here because it's commonly used when mucking about with Strings. Join takes the contents of an array and returns it as a String, using the character you've supplied as the separator (optional).
-<pre>["Monsters", "roam", "with", "impunity"].join #=&gt; "Monstersroamwithimpunity"
-["Monsters", "roam", "with", "impunity"].join(" ") #=&gt; "Monsters roam with impunity"</pre>
+
+<pre><code>["Monsters", "roam", "with", "impunity"].join # "Monstersroamwithimpunity"
+["Monsters", "roam", "with", "impunity"].join(" ") # "Monsters roam with impunity"</code></pre>
+
 <h3>Concatenate</h3>
+
 Two ways to do this, both of which have differing implications for memory management.
-<pre>little_friend = "little friend"
-puts "Say hello to my " + little_friend.to_s #=&gt; "Say hello to my little friend"
-puts "Say hello to my " &lt;&lt; little_friend.to_s #=&gt; same
-puts "Say hello to my ".concat(little_friend) #=&gt; same</pre>
+
+<pre><code>little_friend = "little friend"
+puts "Say hello to my " + little_friend.to_s  # "Say hello to my little friend"
+puts "Say hello to my " << little_friend.to_s # same
+puts "Say hello to my ".concat(little_friend) # same</code></pre>
+
 <h3>Chop</h3>
+
 Removes the last character from the string. Note that Chomp is noted to be safer if record separators are involved, as Chomp will not impact the String if for some reason the record separator is missing.
 
 Note that Chop can usefully be combined with the "times" operator for cool outcomes:
-<pre>villain = "the joker's make-up"
+<pre><code>villain = "the joker's make-up"
 10.times do villain.chop! end 
-puts villain #=&gt; the joker</pre>
+puts villain # the joker</code></pre>
+
 <h3>Include?</h3>
+
 Self-explanatory.
-<pre>batman = "batman"
-puts batman.include?("bat") #=&gt; true</pre>
+
+<pre><code>batman = "batman"
+puts batman.include?("bat") # true</code></pre>
+
 <h3>Split</h3>
+
 Essentially the inverse of join, used to return an array from a String; separator is optional once again.
-<pre>puts "We're stockpiling for the rise of the mutants.".split #=&gt; ["We're", "stockpiling", "for", "the", "rise", "of", "the", "mutants".]</pre>
+<pre><code>puts "We're stockpiling for the rise of the mutants.".split # ["We're", "stockpiling", "for", "the", "rise", "of", "the", "mutants".]</code></pre>
+
 <h3>Squeeze</h3>
+
 Used to remove extraneous repeats of characters; super useful in data cleansing. Check it out:
-<pre>puts "Bruce     Wayne".squeeze #=&gt; "Bruce Wayne"</pre>
-<pre>puts "Arkkhamm Asylumm".squeeze #=&gt; "Arkham Asylum"</pre>
-<pre>puts "Harley Quinn".squeeze(" ") #&gt; "Harley Quinn"</pre>
+
+<pre><code>puts "Bruce     Wayne".squeeze   # "Bruce Wayne"
+puts "Arkkhamm Asylumm".squeeze  # "Arkham Asylum"
+puts "Harley Quinn".squeeze(" ") # "Harley Quinn"</code></pre>
+
 <h3>Start_with</h3>
+
 Self explanatory, but Java guys note that it's "start_with", not "starts_with", and mind those question marks.
-<pre>puts batman.start_with?("bat") #=&gt; true</pre>
+
+<pre><code>puts batman.start_with?("bat") # true</code></pre>
+
 <h3>Strip</h3>
+
 Strip removes both leading and trailing whitespace. Both lstrip and rstrip will remove leading or trailing whitespace, respectively:
-<pre>puts " the mad monk ".strip #=&gt; "the mad monk"</pre>
+
+<pre><code>puts " the mad monk ".strip # "the mad monk"</code></pre>
+
 <h3>String times Integer</h3>
+
 Returns a string repeated as many times as requested, as in:
-<pre>puts "Run" * 5 &lt;&lt; " they're gaining on us" #=&gt; "Runrunrunrunrun they're gaining on us."</pre>
+
+<pre><code>puts "Run" * 5 << " they're gaining on us" # "Runrunrunrunrun they're gaining on us."</code></pre>
+
 <h3>Fun And Interesting Ones</h3>
+
 A few I doubt I'll ever use, but fun nonetheless.
+
 <h4>Clear</h4>
 "clear" is used to clear out a String, or as the Ruby doc puts it, "make a String empty". Anybody else find it interesting that this one doesn't have a bang at the end of it?
-<pre>puts hoss.clear #=&gt; ""</pre>
+<pre><code>puts hoss.clear # ""</code></pre>
+
 <h4>Center</h4>
 Presumably useful for somebody building an ASCII art generator, centers the string using the width provided and using the pad characters if supplied (optional).
-<pre>"batman's enemies".center(4) #=&gt; "batman's enemies"</pre>
-<pre>"batman's enemies".center(40, "x") #=&gt; "<span style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; font-size: 13px; line-height: 19px;">xxxxxxxxxxxxbatman's enemiesxxxxxxxxxxxx"</span></pre>
+<pre><code>"batman's enemies".center(4) # "batman's enemies"
+"batman's enemies".center(40, "x") # xxxxxxxxxxxxbatman's enemiesxxxxxxxxxxxx"</code></pre>
+
 <h4>Intern</h4>
-Returns the <code>Symbol</code> corresponding to <em>str</em>, creating the symbol if it did not previously exist. Most notably, this will allow you to create symbols that might be syntactically permitted using the ":xxxx" method.
+Returns the Symbol corresponding to <em>str</em>, creating the symbol if it did not previously exist. Most notably, this will allow you to create symbols that might not be syntactically permitted using the ":xxxx" method.
 
-<span style="font-family: Consolas, Monaco, monospace; font-size: 12px; line-height: 18px;">'batman and robin'.to_sym #=&gt; :"batman and robin"</span>
-
-
+<pre><code>'batman and robin'.to_sym # :"batman and robin"</code></pre>
 

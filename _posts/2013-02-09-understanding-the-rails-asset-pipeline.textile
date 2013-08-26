@@ -1,36 +1,47 @@
+---
+title: Understanding the Rails asset pipeline
+layout: post
+categories: [development]
+---
+
 In general, using the Rails asset pipeline to include javascript with your application is preferable to other options. Yet the Rails asset pipeline has some quirks to it ('magic!') that can frustrate newbies trying to understand this Rails feature. I've summarized some of the basic principles surrounding the Rails asset pipeline below, as well as a few of the quirks that can confound effective usage of the pipeline by Rails beginners.
-<h3>Three is the magic number</h3>
+<!--more-->
+
+<h4>Three is the magic number</h4>
+
 There are three possible places to put your js files for inclusion into the assets pipeline:
 
-- app/assets/javascripts - assets that are owned by the application, such as custom images, JavaScript files or stylesheets.
-- vendor/assets/javascripts - your own libraries’ code that doesn’t really fit into the scope of the application or those libraries which are shared across applications.
-- lib/assets/javascripts - assets that are owned by outside entities, such as code for JavaScript plugins and CSS frameworks.
+<li> app/assets/javascripts - assets that are owned by the application, such as custom images, JavaScript files or stylesheets.</li>
+<li> vendor/assets/javascripts - your own libraries’ code that doesn’t really fit into the scope of the application or those libraries which are shared across applications.</li>
+<li> lib/assets/javascripts - assets that are owned by outside entities, such as code for JavaScript plugins and CSS frameworks.</li>
 
 Substitute 'css' for 'javascripts' for including css into the asset pipeline.
-<h3>Understanding the manifest</h3>
+
+<h4>Understanding the manifest</h4>
+
 Placing your file into these three locations is not enough. You still need to instruct Rails to include them, what order to include them, and where they are located. To do this, use a syntax as seen below to form <em>directives</em> which are added to the <em>application.js</em> file manifest:
 
-//= require jquery
+<pre><code>//= require jquery
 //= require jquery_ujs
 //= require_tree .
+</code></pre>
 
 What is somewhat confusing to newbies is that the default "application.js" manifest file has a .js extension. Moreover, note that the includes files list above do not have a .js extension. This is because Rails looks at the extension of your manifest to determine what type of files you're including.
 
 Unless you have a need to load files in your app/assets/javascripts folder in order, there is no need to explicitly list your js files in a manifest. The following command can be used to load your files and is frequently seen in examples:
 
-//= require_tree .
+<pre><code>//= require_tree . </code></pre>
 
 Note that this command does not load files outside of the app/assets/javascripts folder; you'll need to reference those explicitly one-by-one in your application.js file, <em>or</em> create an index.js file that references those files, and then reference <em>that </em>file in your application.js. Simple, huh?
-<h3>Tags</h3>
+
+<h4>Tags</h4>
+
 Almost done. You probably have an application.html.erb file which is essentially your layout container template. Make sure the following statements are in this file:
 
-&lt;%= stylesheet_link_tag "application" %&gt;
+<pre><code>&lt;%= stylesheet_link_tag "application" %&gt;
 &lt;%= javascript_include_tag "application" %&gt;
+</code></pre>
 
 Here's where the 'magic' stops; if you're in development mode, you'll be able to see (and troubleshoot) the CSS and JS files being included in your app via 'view source'.
 
 One other tip - the majority of the documentation surrounding the form helpers listed above are actually located in the "Layouts and Rendering" section of the Rails docs, <em>not </em>in the Asset Pipeline.
-
-&nbsp;
-
-&nbsp;

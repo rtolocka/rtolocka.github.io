@@ -7,12 +7,15 @@
 	<link rel="stylesheet" href="/css/foundation.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="/css/normalize.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="/css/foundation-min.css" type="text/css" media="screen and (min-width:651px) and (max-width: 1024px), screen and (min-device-width: 768px) and (max-device-width: 1024px)" />
-	<script src="/js/pager.js"/>        
+	<link rel="stylesheet" href="/css/overrides.css" type="text/css"/>
+	<script src="/js/custom.modernizr.js"></script>
+	<script src="/js/foundation.min.js"></script>
+	<script src="/js/ext/pager.js"/></script>
 </head>
 <body>
 	<div class="row">
 		<div class="large-12 columns">
-			<h2>Rich Tolocka</h2>
+			<h2><a href="{{ site.url }}">Rich Tolocka</a></h2>
 			<p>Technologist, Ruby Fan-boy, Banjo Player, etc. etc.</p>
 			<hr/>
 		</div>
@@ -20,7 +23,7 @@
 	{{ content }}
 	<div class="row">
 		<div class="large-12 columns">
-		<h3>Contact me</h3>
+		<h4>About me</h4>
 		<div class="panel">
 		<p>
 			<a href="https://github.com/rtolocka">github.com/rtolocka</a><br />
@@ -29,5 +32,11 @@
 		</div>
 		</div>
 	</div>
+<!-- Check for Zepto support, load jQuery if necessary -->
+<script>
+  document.write('<script src=/js/vendor/'
+    + ('__proto__' in {} ? 'zepto' : 'jquery')
+    + '.js><\/script>');
+</script>
 </body>
 <html>

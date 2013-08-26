@@ -1,0 +1,12 @@
+
+li { margin: 7px; margin-left: 15px; }
+body{ font-size: 1.3em; color: #000000 }
+pre {
+white-space: pre;
+white-space: pre-wrap;
+word-wrap: break-word;
+background: #f7f7f7;
+padding: 1em;
+margin-bottom: 1.618em;
+}
+code{ font-size: .7em; }
