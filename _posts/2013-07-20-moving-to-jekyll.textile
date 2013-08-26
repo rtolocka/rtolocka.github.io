@@ -1,0 +1,20 @@
+---
+title: Moving to Jekyll
+layout: post
+categories: [jekyll, tools]
+---
+Not many new blogs lately, mostly because I've been occupied moving this blog to Jekyll (ironically). This has been a good opportunity to muck around with Liquid, yet another templating language. It hasn't been unpleasant, although Jekyll has a single-mindedness that can be a bit interesting.
+
+<!--more-->
+
+I'm using Foundation to build the CSS and handle Javascript (I'll probably do a quick blog post on Zepto if there is anything to figure out there), which has been interesting, considering most of my practical CSS framework experience is with Bootstrap (through Rails obviously). The differences are not substantial for me at this point; this guy did a pretty solid <a href="http://abetteruserexperience.com/2013/05/twitter-bootstrap-vs-foundation-4-which-one-is-right-for-you/" target="_blank">blog post</a> outline the main discriminators between the two.
+
+This example of doing Wordpress-style teasered posts is as good a place as any if you'd like to dig into <a href="https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#standard-filters" target="_blank">Liquid filters</a>.
+
+<pre><code>{% if post.content contains '<!--more-->' %}
+{{ post.content | split:'<!--more-->' | first }}
+{% else %}
+# handle case with no split here...
+{% endif %}</code></pre>
+
+Credit to <a href="https://coderwall.com/heyitsgarrett">this guy</a>-

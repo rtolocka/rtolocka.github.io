@@ -1,0 +1,77 @@
+---
+title: Implement 'My Account' as an AJAX overlay using Rails
+layout: post
+categories: [rails, jquery]
+---
+
+This blog post reviews my approach for implementing a "My Account Details" window as an AJAX overlay using Rails.<!--more-->
+
+<h4>Building the Overlay</h4>
+
+The first step is to implement your Overlay. Two CSS classes are needed. The overlay itself will be absolute positioned - this will remove the element from the 'normal' CSS element flow and allow it to hover over other elements, as we would expect of an overlay.
+<pre><code>
+.overlay {
+    background-color: #FFFFFF;
+    opacity: .9;
+    position: absolute; 
+    width: 30%;
+    height: 30%;
+    z-index: 10;
+    border-style:solid;
+    border-width:2px;
+    border-color: #000000;
+}
+</code></pre>
+
+<h4>Overlay Container</h4>
+
+The second element will be a relatively positioned element, which will contain our overlay. This allows us to keep the overlay where it should be, relative to the normal flow. This is a bit of "cake eating" - we can get the benefits of the absolute positioning (on the overlay) while still allowing the item to be somewhat responsive to page resizing. (See this <a href="http://css-tricks.com/absolute-positioning-inside-relative-positioning/" target="_blank">link</a> for a good explanation of this, as this is a pretty critical piece of understanding, expected from mid-level CSS developers.)
+<pre><code>
+.overlay-container {
+    top: 35; 
+    left: 200;
+}
+</code></pre>
+
+<h4>My Account window</h4>
+
+Now that this is done, we need to code our "My Account" menu item to trigger the display of the overlay. In my example, I use JQuery to add the overlay elements to the DOM first. Note that the example below is purposefully verbose to aid in understanding the post-click DOM; this could easily be written in fewer lines -
+<pre><code>
+$(document).ready( function() {
+    $("#my-account").click( function(event) {
+        $(".content").prepend('&lt;div class="overlay-container"&gt;');
+        $(".overlay-container").append('&lt;div class="overlay">&lt;div&gt;');
+        $(".content").append('&lt;/div&gt;');
+        $(".overlay").hide();
+        $.get("/user/info");
+        $(".overlay").slideDown("fast");
+   });
+});
+</code></pre>
+
+The previous code hides the overlay, then immediately does a GET request to an JSON-ified end-point (which I've mapped through a custom route in routes.rb, not shown here.) In this case, the URL "user/info" leads to the 'show' method, as follows:
+<pre><code>
+def show
+   render '/devise/info/user'
+end
+</code></pre>
+
+Note that Devise puts the current user information into session, therefore there is no real data set-up required here. As the request is "by Javascript for JSON", Rails knows to render the user.js.erb response as follows:
+<pre><code>
+$(".overlay").html("<%= escape_javascript(render('devise/info/user'))%>");
+</code></pre>
+
+Which in turns renders the following partial (_user.js.erb), setting the HTML content of the overlay appropriately.
+<pre><code>
+# contents of 'devise/info/_user.js.erb'
+<code>&lt;div class="label overlay-label"&gt;First name: <%= current_user.email %>&lt;/div&gt;</code>
+&lt;div class="label overlay-label"&gt;Last name: <%= current_user.first %>&lt;/div&gt;
+&lt;div class="label overlay-label"&gt;Email: <%= current_user.last %>&lt;/div&gt;
+</p>
+</code></pre>
+
+<h4>Critique and up next</h4>
+
+One obvious critique of this approach is - "You're not really doing anything at the controller besides using it to link up to and return *.js.erb files - so why go server-side at all?" My answer is that while I'm not do anything on the server right now, I expect at some point I'll need to do something in the area of user data set-up.
+
+I plan to enhance this with the ability to do some AJAX-style editing of account details in the overlay. More soon!
