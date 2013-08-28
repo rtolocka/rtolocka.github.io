@@ -61,13 +61,12 @@ Note that Devise puts the current user information into session, therefore there
 $(".overlay").html("<%= escape_javascript(render('devise/info/user'))%>");
 </code></pre>
 
-Which in turns renders the following partial (_user.js.erb), setting the HTML content of the overlay appropriately.
+Which in turns renders the following partial, setting the HTML content of the overlay appropriately.
+
 <pre><code>
-# contents of 'devise/info/_user.js.erb'
-<code>&lt;div class="label overlay-label"&gt;First name: <%= current_user.email %>&lt;/div&gt;</code>
-&lt;div class="label overlay-label"&gt;Last name: <%= current_user.first %>&lt;/div&gt;
-&lt;div class="label overlay-label"&gt;Email: <%= current_user.last %>&lt;/div&gt;
-</p>
+<div class="label overlay-label">First name: <%= current_user.email %></div>
+<div class="label overlay-label">Last name: <%= current_user.first %></div>
+<div class="label overlay-label">Email: <%= current_user.last %></div>
 </code></pre>
 
 <h4>Critique and up next</h4>

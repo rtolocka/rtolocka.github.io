@@ -6,11 +6,10 @@
 	<meta name="author" content="Rich Tolocka" />
 	<link rel="stylesheet" href="/css/foundation.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="/css/normalize.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="/css/foundation-min.css" type="text/css" media="screen and (min-width:651px) and (max-width: 1024px), screen and (min-device-width: 768px) and (max-device-width: 1024px)" />
+	<link rel="stylesheet" href="/css/foundation.min.css" type="text/css" media="screen and (min-width:651px) and (max-width: 1024px), screen and (min-device-width: 768px) and (max-device-width: 1024px)" />
 	<link rel="stylesheet" href="/css/overrides.css" type="text/css"/>
-	<script src="/js/custom.modernizr.js"></script>
+	<script src="/js/vendor/custom.modernizr.js"></script>
 	<script src="/js/foundation.min.js"></script>
-	<script src="/js/ext/pager.js"/></script>
 </head>
 <body>
 	<div class="row">
@@ -22,8 +21,8 @@
 		<h4>About me</h4>
 		<div class="panel">
 		<p>
-			<a href="https://github.com/rtolocka">github.com/rtolocka</a><br />
-			<a href="www.linkedin.com/in/richtolocka">linkedin.com/in/richtolocka</a>
+			<a href="/about.html">my bio</a><br />
+			<a href="http://www.linkedin.com/in/richtolocka" target="_blank">linkedin.com/in/richtolocka</a>
 		</p>
 		</div>
 	</div>
@@ -35,6 +34,9 @@
   document.write('<script src=/js/vendor/'
     + ('__proto__' in {} ? 'zepto' : 'jquery')
     + '.js><\/script>');
+</script>
+<script>
+  $(document).foundation();
 </script>
 </body>
 <html>

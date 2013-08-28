@@ -13,7 +13,7 @@ title: Rich Tolocka
 		{% else %}
 		    <!-- Case for when no excerpt is defined -->
 		{% endif %}
-		<div class="tags">{{ post.categories | join: ', ' }} </div></p>
+		<div class="tags">about: {{ post.categories | join: ', ' }} </div></p>
 		<hr/>
 		{% endfor %}
 	<a href="/{{ paginator.next_page_path }}/index.html" class="medium secondary button">Next</a>
