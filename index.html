@@ -16,6 +16,8 @@ title: Rich Tolocka
 		<div class="tags">about: {{ post.categories | join: ', ' }} </div></p>
 		<hr/>
 		{% endfor %}
-	<a href="{{url}}/{{ paginator.next_page_path }}/index.html" class="medium secondary button">Next</a>
+    {% if paginator.next_page %}
+	    <a href="{{ site.url }}/{{ paginator.next_page_path }}/index.html" class="medium secondary button">Next</a>
+    {% endif %}
 	</div>
 </div>
