@@ -6,11 +6,11 @@ categories: [ruby]
 
 Ruby blocks can easily be misunderstood as purely a control flow mechanism - particularly by Java developers who see the "do" and "yield" keywords and jump to a logical, if incorrect, conclusion.
 <!--more-->
-Like a lot of Ruby concepts, blocks are everywhere yet can be used without fully grokking the underlying concepts. One fundamental piece of understanding is that any time you see code contained within brackets, that is a block:
+Like a lot of Ruby concepts, blocks are everywhere yet can be used without fully grokking the underlying concepts. One fundamental piece of understanding is that any time you see code contained within brackets as follows, that is a block:
 
 <pre><code>5.times { puts "I'll never go to sleep with the lights off again." }</code></pre>
 
-Rather than viewing this as syntactical control flow, think of this as "We're going to pass this chunk of code to the 'times' method." Brackets can be replaced with a 'do' and 'end'; this is also a convenient way to immediately comprehend that a <em>block is about to happen:</em>
+Rather than viewing this as syntactical control flow, think of this as "We're going to pass this chunk of code to the 'times' method." Brackets are replaced with a 'do' and 'end' for multi-line blocks; this is also a convenient way to immediately comprehend that a <em>block is about to happen:</em>
 
 <pre><code>5.times do
    puts "I'll never go to sleep with the lights off again."
@@ -26,7 +26,7 @@ def process
       # loop through all the monsters, code omitted
       # do some predictable pre-processing
       monster.prep 
-      yield(monster)
+      yield monster
       # do some predictable post-processing
       monster.banish 
       # done looping
