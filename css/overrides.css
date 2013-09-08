@@ -18,8 +18,30 @@ pre {
 code { 
   font-size: .7em; }
 
+/** Top Panel: adjustments to get top panel a bit better proprortioned. */
+h1 {
+  margin: 10px 0 10px 0; }
+
+#bio-panel {
+  margin: 15px 0 0 0; }
+
+hr {
+  margin: 30px 0 30px 0; }
+
+#top-container-panel {
+  postion: fixed; }
+
+/** Get anchor links in body text more visible. */
 p a {
   color: #CC3300 }
+
+/** Special handling for links in top panel. */
+.panel p a {
+  color: #69788c }
+
+.panel p a:hover {
+  color: #CC3300 }
+/** End special handling. */
 
 /** Change hovers to red. */
 a:hover { 
