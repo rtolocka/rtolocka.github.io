@@ -18,6 +18,9 @@ pre {
 code { 
   font-size: .7em; }
 
+p a {
+  color: #CC3300 }
+
 /** Change hovers to red. */
 a:hover { 
   color: #CC3300 }
