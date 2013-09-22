@@ -1,7 +1,7 @@
 ---
 title: Building Blocks of Idiomatic Ruby
 layout: post
-categories: [roobs, idiomatic-ruby]
+categories: [ruby, roobs, idiomatic-ruby]
 ---
 
 There are a number base concepts in Ruby, that once understood, can be very helpful in allowing newcomers to 'break through' into writing more idiomatic Ruby. What is idiomatic Ruby, you ask?
