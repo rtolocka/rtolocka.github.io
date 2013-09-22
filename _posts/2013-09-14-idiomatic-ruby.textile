@@ -1,0 +1,82 @@
+---
+title: Building Blocks of Idiomatic Ruby
+layout: post
+categories: [roobs, idiomatic-ruby]
+---
+
+There are a number base concepts in Ruby, that once understood, can be very helpful in allowing newcomers to 'break through' into writing more idiomatic Ruby. What is idiomatic Ruby, you ask?
+
+<!--more-->
+
+Wikipedia defines "idiomatic" as, "being of a characteristic mode of expression in music or art." For me, writing Idiomatic Ruby has become a code phrase for "utilizing the unique capabilities of the language to write elegant code."
+
+One concept critical to writing idiomatic Ruby are blocks and iterators; I've done at least one other blog post on this subject and I plan on doing more. I'll speak to two others in this blog post:
+
+* Everything in Ruby is an expression
+* Everything, except nil (and false), is true
+
+<h4>Everything in Ruby is an expression</h4>
+
+In Ruby, everything is Ruby is an expression; this means that most anything that can return a value does. As a corollary to this, return statements are optional - the last evaluated value in a method will be returned automatically. 
+
+With this in mind, take a look at the following (somewhat contrived) code, which to a Rubyist, looks like it was written by a Java developer gone berserk:
+
+<pre><code>
+# yep, this code has some problems.
+def validate_element(element)
+  if (@some_array.index(element) > -1) 
+    puts ("Found it!")
+    return true
+  else
+    puts ("Nope, sadface.")
+    return false
+  end
+end
+</pre></code>
+
+Knowing that return values are optional, we can easily make a change to simplify this code:
+
+<pre><code>
+# A little better... more improvement coming!
+def validate_element(element)
+  if (@some_array.index(element) > -1) 
+    puts ("Found it!")
+    true
+  else
+    puts ("Nope, not here.")
+    false
+  end
+end
+</pre></code>
+
+<h4>Everything, except nil (and false), is true</h4>
+
+In Ruby, everything is strictly coerced to true, except for nil, and well... false. As demonstration, run irb and execute the following. (If you don't understand the following, search for 'Ruby ternary operators syntax' or something similar).
+
+<pre><code>
+0 ?   1 : 0
+[] ?  1 : 0
+"" ?  1 : 0
+" " ? 1 : 0
+nil ? 1 : 0
+false ? 1 : 0
+</pre></code>
+
+Ruby uses this principle in practice frequently in String, Hash, and Array 'finder' type methods- any of these methods will return nil if nothing is found matching the requested object in the receiver. This means the original code can be re-factored as:
+
+<pre><code>
+# much better
+def validate_element(element)
+  @some_array.index(element) # will return nil if nothing found, which is interpreted as false
+end
+</pre></code>
+
+Granted, we've removed the diagnostics, but you'll agree that this is far more economical and concise.
+
+<h4>A bit more</h4>
+
+It's worth knowing that true, false, and nil are not just keywords - they are also objects. Surprised? Nah, everything in Ruby is an Object, remember? Check out <a href="http://www.ruby-doc.org/core-2.0.0/NilClass.html" target="_blank">NilClass</a>, <a href="http://www.ruby-doc.org/core-2.0.0/TrueClass.html" target="_blank">TrueClass</a>, and <a href="http://www.ruby-doc.org/core-2.0.0/FalseClass.html" target="_blank">FalseClass</a>.
+
+I'll be writing a "grab-bag" of Ruby idioms in a future post; stay tuned!
+
+
