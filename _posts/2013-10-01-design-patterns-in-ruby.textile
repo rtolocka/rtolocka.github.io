@@ -1,0 +1,37 @@
+---
+title: Ruby Design Patterns
+layout: post
+categories: [learning, roobs, ruby]
+---
+I've recently had the pleasure of reading a book I've been meaning to pick up for a while: <a href="http://www.amazon.com/Design-Patterns-Ruby-Russ-Olsen/dp/0321490452">"Design Patterns in Ruby" by Russ Olsen</a>. I read the Gang of Four's Design Patterns in my mid-twenties and it set me upon a very different path than the one I was on, which naturally made me curious about this book. It's funny to me that warning against ritualized and mindless of design patterns has become almost a cliche since for me, 'Design Patterns' was an entry point to a much richer and more imaginative view of development. After reading the original 'Design Patterns', it became so much easier for me _envision_ dynamic interactions of code. 
+
+To start, Mr. Olsen talks about general object-oriented principles of 'goodness' - separating out dynamic elements from static elements, coding to interfaces, why inheritance is overrated, and YAGNI. From there, he gives one of the best run-throughs of the Ruby language I've read (!!). So good, in fact, that I might recommend the first few chapters of the book to a Java developer looking to make 'the hop' to Ruby over most anything else I've read.
+
+From there, the books goes from pattern to pattern, each chapter focusing on a new one. Unsurprisingly, blocks and procs play a pretty big role in most of these patterns. At the end of the day, since many of the design patterns deal with "abstracting the change away"; blocks and procs are natural fits for that, providing an easy way to vary a piece of code. 
+
+In fact, this last point represents one of my big (philosophical) struggles with Ruby. Blocks and procs are so damn easy, it is easy to abstract away whole class structures that might be helpful in understanding or testing the overall application architecture. For example, in a more traditional approach, you'd have something like:
+
+class PatientObserver
+  def update
+    // do stuff here when the Patient changes.
+    // the Observer module notifies via the 'update' method.
+    // Nice and testable, eh? 
+    // Nice and self-describing, no?
+end
+
+Under a more proc-or-block oriented approach, you might end up with something like this:
+
+diane = Patient.new
+diane.add_observer do |changed_patient|
+  // do some stuff here.
+  // hopefully we haven't buried 
+  // business logic deep within the code!
+end
+
+Realistically, the same questions can be raised using Java; anybody who has encountered a program that overused anonymous classes knows what I'm talking about. Certainly anybody can write an impossible-to-understand-or-test program in any language; as with any tool, you need to know how to use it properly. Back to the book...
+
+One of the tastiest bits in the book surrounds using method_missing to implement easy and foolproof Proxy objects. Very cool stuff. The final few chapters digs into some more Ruby-specific topics - DSLs, metaprogrammings, and a quick stop into Rails for a review convention over configuration techniques.
+
+All in all, a great book; better than 'Cats'; highly recommend.
+
+
