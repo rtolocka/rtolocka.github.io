@@ -1,9 +1,11 @@
 ---
-title: Ruby Design Patterns
+title: Book Review: Ruby Design Patterns
 layout: post
 categories: [learning, roobs, ruby]
 ---
 I've recently had the pleasure of reading a book I've been meaning to pick up for a while: <a href="http://www.amazon.com/Design-Patterns-Ruby-Russ-Olsen/dp/0321490452">"Design Patterns in Ruby" by Russ Olsen</a>. I read the Gang of Four's Design Patterns in my mid-twenties and it set me upon a very different path than the one I was on, which naturally made me curious about this book. It's funny to me that warning against ritualized and mindless of design patterns has become almost a cliche since for me, 'Design Patterns' was an entry point to a much richer and more imaginative view of development. After reading the original 'Design Patterns', it became so much easier for me _envision_ dynamic interactions of code. 
+
+<!--more-->
 
 To start, Mr. Olsen talks about general object-oriented principles of 'goodness' - separating out dynamic elements from static elements, coding to interfaces, why inheritance is overrated, and YAGNI. From there, he gives one of the best run-throughs of the Ruby language I've read (!!). So good, in fact, that I might recommend the first few chapters of the book to a Java developer looking to make 'the hop' to Ruby over most anything else I've read.
 
