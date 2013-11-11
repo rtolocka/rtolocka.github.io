@@ -1,8 +1,9 @@
 ---
-title: Book Review: Ruby Design Patterns
+title: Book Review - Ruby Design Patterns
 layout: post
-categories: [learning, roobs, ruby]
+categories: [learning, patterns]
 ---
+
 I've recently had the pleasure of reading a book I've been meaning to pick up for a while: <a href="http://www.amazon.com/Design-Patterns-Ruby-Russ-Olsen/dp/0321490452">"Design Patterns in Ruby" by Russ Olsen</a>. I read the Gang of Four's Design Patterns in my mid-twenties and it set me upon a very different path than the one I was on, which naturally made me curious about this book. It's funny to me that warning against ritualized and mindless of design patterns has become almost a cliche since for me, 'Design Patterns' was an entry point to a much richer and more imaginative view of development. After reading the original 'Design Patterns', it became so much easier for me _envision_ dynamic interactions of code. 
 
 <!--more-->
@@ -13,6 +14,7 @@ From there, the books goes from pattern to pattern, each chapter focusing on a n
 
 In fact, this last point represents one of my big (philosophical) struggles with Ruby. Blocks and procs are so damn easy, it is easy to abstract away whole class structures that might be helpful in understanding or testing the overall application architecture. For example, in a more traditional approach, you'd have something like:
 
+<pre><code>
 class PatientObserver
   def update
     // do stuff here when the Patient changes.
@@ -20,15 +22,18 @@ class PatientObserver
     // Nice and testable, eh? 
     // Nice and self-describing, no?
 end
+</pre></code>
 
 Under a more proc-or-block oriented approach, you might end up with something like this:
 
+<pre><code>
 diane = Patient.new
 diane.add_observer do |changed_patient|
   // do some stuff here.
   // hopefully we haven't buried 
   // business logic deep within the code!
 end
+</pre></code>
 
 Realistically, the same questions can be raised using Java; anybody who has encountered a program that overused anonymous classes knows what I'm talking about. Certainly anybody can write an impossible-to-understand-or-test program in any language; as with any tool, you need to know how to use it properly. Back to the book...
 
