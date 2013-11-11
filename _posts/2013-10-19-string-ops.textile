@@ -1,6 +1,0 @@
----
-title: Book Review: Ruby Design Patterns
-layout: post
-categories: [learning, roobs, ruby]
-draft: true
----
