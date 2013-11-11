@@ -78,3 +78,11 @@ h4 {
 
 h5 {
   font-size: 1.125em; }
+
+
+@media="screen and (max-width: 1024px) and (min-width: 651px), screen and (max-device-width: 1024px) and (min-device-width: 768px)"
+a {
+color: #3B3C40;
+}
+
+
