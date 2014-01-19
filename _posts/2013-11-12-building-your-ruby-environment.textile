@@ -1,0 +1,109 @@
+---
+title: Building Your Ruby Environment
+layout: post
+categories: roobs
+---
+
+Developers who spend a year or two strictly doing "Rails-only" development might be surprised by some of the elbow grease required to get a stand-alone Ruby environment running. Contrasted with Rails, where many environmental dependencies, class-loading, and logging are handled for you, "rackless" Ruby apps require a more thorough understanding to get Gems and classes loading properly, not to mentions test executing predictably and conveniently. This posts summarizes some of the lessons learned I've picked up in doing so. This post presumes a basic knowledge of Rake and Rubygems.
+
+<!--more-->
+
+<h4>Start with your Rakefile</h4>
+
+I've copied snippets of my 'starter' Rakefile below. The first line is fairly self-explanatory; the second lines discovers your Gemfile and puts your Gems on the load path.
+
+<pre>
+<code>
+require 'rubygems'
+require 'bundler/setup'
+</pre>
+</code>
+
+The next three lines allows you to do dynamic requiring of gems depending on your context; this can be important in larger apps when you're looking to speed run times to execute tests or perform development-only tasks.
+
+<pre>
+<code>
+environment = ENV["ENV_KEY"] || "development"
+if ENV["ENV_KEY"] then puts "Running rake in #{ENV["ENV_KEY"]} mode." end
+Bundler.require(:default, environment.to_s)
+</pre>
+</code>
+
+To specify an environment you can provide the key any place on the command line. For example, these all work:
+
+<pre>
+<code>
+rake main ENV_KEY=prod
+rake ENV_KEY=prod main
+ENV_KEY=prod rake main
+</pre>
+</code>
+
+(I'm not sure why you'd put your ENV_KEY square in the middle of your rake statement, but this proves the point.)
+
+The following statement leverages the use of the <a href="https://github.com/jarmo/require_all">require_all</a> Gem to load up all of the Rake tasks you've defined by pointing at a single folder containing them. In this case, mine are located in, well, see for yourself: 
+
+<pre>
+<code>
+require_all File.expand_path('./app/tasks')
+</pre>
+</code>
+
+<h4>Understanding Bundler.require</h4>
+
+When you employ Bundler.require, it effectively removes the need to require Gems automatically at the top of your classes by effectively saying, "Require all the Gems in my Gemfile" (or alternatively, require all the Gems in the Gem group(s) I've specified). 
+
+There are definitely differences of opinion on this point; some feel that Bundler.require's "all at once" approach makes code less explicit, and makes it more difficult to find and eliminate complexity. There are also performance implications to this strategy as well; a worst-case scenario might be a large application that requires a re-factor to move all from global requires after much code has been built. That said, one could argue the opposite - that placing require statements throughout your code actually increases coupling in some sense.
+
+The issue of explicit dependencies repeated throughout code also relates to the next item.
+
+<h4>Helper files</h4>
+
+One issue that inevitably arises is making sure your tests can "find" the classes they are actually testing! Without some other approach, you end up with long require statements at the top of your classes, like follows:
+
+<pre>
+<code>
+require_relative "../app/model/player"
+require_relative "../app/model/index"
+require_relative "../app/model/index_builder"
+</code>
+</pre>
+
+This pattern repeats itself over and over, until your test classes are rife with a lot of repititous code. A solution to this are helper files. Helper files essentially de-couple the application file from the test file, making it easier to find problems, reducing repitition, and simply making it easier to make changes in a single spot if needed.
+
+Using a Helper file strategy means that the above code moves into a helper.rb class, and the tests themselves reference that helper.rb at the top of the test 'stack', as follows:
+
+<pre>
+<code>
+require_relative "../helper.rb"
+</code>
+</pre>
+
+<h4>Logging and Initialization</h4>
+
+A final helper is something I picked up from a recent coder night that featured <a href="https://github.com/bokmann/RASK">RASK</a>, an starting application framework for Rake/Ruby apps. The specific technique highlighted below is nothing groundbreaking, but provides some decoupling from your logger; this should be a familiar concept for Java refugees.
+
+<pre>
+<code>
+require File.expand_path('app/bootstrap')
+
+class App
+  include Singleton
+
+  @@logger = Logger.new(File.expand_path(Global.logging.file))
+  @@logger.level = Logger.const_get(Global.logging.level.upcase)
+
+  def self.logger
+    @@logger
+  end
+</pre>
+</code>
+
+<h4>Resources</h4>
+
+* http://bundler.io/v1.5/bundler_setup.html
+* http://anti-pattern.com/bundler-setup-vs-bundler-require
+* http://anti-pattern.com/use-bundler-setup-instead-of-bundler-require
+* https://github.com/jarmo/require_all
+* https://github.com/bokmann/RASK
+

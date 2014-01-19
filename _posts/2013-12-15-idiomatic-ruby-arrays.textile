@@ -1,0 +1,141 @@
+---
+title: Idiomatic Arrays in Ruby
+layout: post
+categories: roobs
+---
+
+I want to cover the common uses of Ruby arrays that newcomers either need to know or are likely to encounter when reviewing other's code. In my experience, there are about 5 or 6 very idiomatic array behaviors and once you've grokked them, you're doing okay. I'm purposefully not covering array construction here. I'm also not covering basic CompSci stuff like push and pop and index and etc. etc.
+
+<!--more-->
+
+<h4>Unary Operators</h4>
+
+The array class gives you a set of unary operators to use for basic data manipulation (i.e. addition, subtraction, etc.) Here's a quick run-through:
+
+<pre>
+<code>
+def add_players(draft_picks, offseason_signings)
+  team << draft_picks << offseason_signings # add consecutively.
+  new_team = old_team + draft_picks         # merge the contents of the arrays.
+  new_team = new_team - pre_season_cuts     # subtract the contents of the right array that are common with the left array.
+end
+</code>
+</pre>
+
+You'll often see the the first example above when putting your test set together in Rake, as follows:
+
+<pre>
+<code>
+test.libs << 'lib' << 'test'
+</code>
+</pre>
+
+It's worth pointing out that unary operators are common additions to classes in Ruby; so, for example instead of having an "add_player" method in your Team class, you might compose a unary add method like so:
+
+<pre>
+<code>
+def << player
+  @roster.add(player)
+end
+
+team = Team.new
+team << some_player
+</code>
+</pre>
+
+<h4>Join and *</h4>
+
+Join 'compiles' the array to a String value using an (optional) separator value. There is a unary operator for this too - * - as demonstrated below:
+
+<pre>
+<code>
+ticket_prices = ["Prices", "are", "$20.00']
+puts ticket_prices.join
+puts ticket_prices.join(" ")
+puts ticket_prices.join("-")
+puts ticket_prices * " "  # Ruby 2.0 only
+</code>
+</pre>
+
+Note that when the * operator is used with an integer, it simply creates a new array by multiplying it by the integer provided, i.e.:
+
+<pre>
+<code>
+ticket_prices = ["Prices", "are", "$20.00']
+puts ticket_prices * 2 # "Prices are $20.00 Prices are $20.00"
+</code>
+</pre>
+
+<h4>Length and size</h4>
+
+Mostly worth noting just to point out that length and size are aliased to each other; I recall wrestling a lot with whether to use size or length depending on String, Integer, or Array in Java (possibly solved since?), so this is a nice touch:
+
+<pre>
+<code>
+team = "Griffin", "Cousins", "Young"
+puts team.size 
+puts team.length
+</code>
+</pre>
+
+<h4>Map (and Collect)</h4>
+
+Map and Collect are again aliased to each other. When passed a block, create a new array containing the elements modified by that block. For example:
+
+<pre>
+<code>
+def upcase(team)
+  team.collect do |player|
+    player.upcase
+  end
+end
+</code>
+</pre>
+
+Personally, I prefer "collect" as map seems a bit obscure and less expressive.
+
+<h4>Keep_if (and Select)</h4>
+
+Keep_if and Select are again aliased to each other. I think of these as the "boolean operations" used to exert changes to the array. Used to remove items from an array, either returning a new one or modifying the existing one in place if used with the ! modifier.
+
+<pre>
+<code>
+def rookies
+  team.select do |player|
+    player.is_rookie
+  end
+end
+</code>
+</pre>
+
+<h4>Inject</h4>
+
+One of the "fancier' array methods. This is actually provided by Enumerable so you won't find it in the Array docs. 
+
+I prefer to think of this along the lines of an "accumulative" operation. I say that because it allows you to control changes to the array based on what has already happened while looping through your data.
+
+The most contrived yet easiest to understand example is adding up the numbers in an array.
+
+<pre>
+<code>
+def total_salary
+  [200000, 440000, 800000, 12100000].inject(0) do |result, item|
+    item + result
+end
+</code>
+</pre>
+
+In this example, 0 is the initial value passed into the "result" variable; subsequent iterations the result value will contain the return value of the block itself. You can see how this is used to add up the values via the following pseudo code:
+
+# 0 + 2 = 2
+# 2 + 4 = 6
+# 6 + 8 = 14
+# 14 + 12 = 26
+
+<h4>Supporting Resources</h4>
+
+* http://endofline.wordpress.com/2011/01/21/the-strange-ruby-splat/
+* http://blog.jayfields.com/2008/03/ruby-inject.html
+
+
+
