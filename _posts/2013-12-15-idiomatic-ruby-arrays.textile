@@ -14,11 +14,14 @@ The array class gives you a set of unary operators to use for basic data manipul
 
 <pre>
 <code>
-def add_players(draft_picks, offseason_signings)
-  team << draft_picks << offseason_signings # add consecutively.
-  new_team = old_team + draft_picks         # merge the contents of the arrays.
-  new_team = new_team - pre_season_cuts     # subtract the contents of the right array that are common with the left array.
-end
+  def add_players(draft_picks, offseason_signings)
+    new_guys = draft_picks + offseason_signings  # merge the contents of the arrays. for demo purposes only, won't use 'new_guys' so we can show the following:
+    @roster << draft_picks.flatten << offseason_signings.flatten # add these players to the end of the team; you can layer these as shown.
+  end
+
+  def cut_players(cuts)
+   @roster = @roster - cuts.flatten  # subtract the contents of the right array that are common with the left array.
+  end
 </code>
 </pre>
 
@@ -34,9 +37,9 @@ It's worth pointing out that unary operators are common additions to classes in 
 
 <pre>
 <code>
-def << player
-  @roster.add(player)
-end
+  def << player
+    @roster.push(player)  # example of a bespoke unary operator added for convenience and expression.
+  end
 
 team = Team.new
 team << some_player
@@ -101,7 +104,7 @@ Keep_if and Select are again aliased to each other. I think of these as the "boo
 <pre>
 <code>
 def rookies
-  team.select do |player|
+  @roster.select do |player|
     player.is_rookie
   end
 end
@@ -118,7 +121,7 @@ The most contrived yet easiest to understand example is adding up the numbers in
 
 <pre>
 <code>
-def total_salary
+def salary
   [200000, 440000, 800000, 12100000].inject(0) do |result, item|
     item + result
 end
@@ -134,7 +137,6 @@ In this example, 0 is the initial value passed into the "result" variable; subse
 
 <h4>Supporting Resources</h4>
 
-* http://endofline.wordpress.com/2011/01/21/the-strange-ruby-splat/
 * http://blog.jayfields.com/2008/03/ruby-inject.html
 
 
