@@ -15,12 +15,15 @@ The array class gives you a set of unary operators to use for basic data manipul
 <pre>
 <code>
   def add_players(draft_picks, offseason_signings)
-    new_guys = draft_picks + offseason_signings  # merge the contents of the arrays. for demo purposes only, won't use 'new_guys' so we can show the following:
-    @roster << draft_picks.flatten << offseason_signings.flatten # add these players to the end of the team; you can layer these as shown.
+    new_guys = draft_picks + offseason_signings  # merge the contents of the arrays. 
+    # for demo purposes only, won't use 'new_guys' so we can show the following:
+    @roster << draft_picks.flatten << offseason_signings.flatten # add these players...
+    # ...to the end of the team; you can layer these as shown.
   end
 
   def cut_players(cuts)
-   @roster = @roster - cuts.flatten  # subtract the contents of the right array that are common with the left array.
+   @roster = @roster - cuts.flatten   # subtract the contents of the right array
+                                      # that are common with the left array.
   end
 </code>
 </pre>
@@ -38,7 +41,8 @@ It's worth pointing out that unary operators are common additions to classes in 
 <pre>
 <code>
   def << player
-    @roster.push(player)  # example of a bespoke unary operator added for convenience and expression.
+    # example of a bespoke unary operator added for convenience and expression.
+    @roster.push(player)  
   end
 
 team = Team.new
