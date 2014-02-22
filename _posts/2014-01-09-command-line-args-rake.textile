@@ -10,9 +10,9 @@ As such, my application had a few variables that controlled how much data it wou
 
 <!--more-->
 
-I got pretty tired of adjusting these values by hand for each run of my program, and decided to go ahead and modify my Rake file to accept variables to customize these values from the command line.
+I got pretty tired of adjusting these values in the code for each run of my program, and decided to go ahead and modify my Rake file to accept variables to customize these values from the command line.
 
-A very important part of this is making sure you've set up some default values. This ensures that your rake script will run predictably and optimally regardless of whether or not the runner chooses to provide input values.
+A very important part of this is making sure you've set up some default values. This ensures that your Rake script will run predictably and optimally regardless of whether or not the person running it chooses to provide input values.
 
 I've provided a simple example of my "default" task below. This example specifies a top-end default limit of 25 items to process, with output going to the terminal by default.
 
@@ -31,7 +31,7 @@ While the Rake documentation seems to imply that only parameters with spaces nee
 
 <pre>
 <code>
-rake "name[billy bob, smith]"
+rake "task-name[billy bob, smith]"
 </code>
 </pre>
 
@@ -39,7 +39,7 @@ I've found that any set of multiple parameters need to be wrapped in quotes. For
 
 <pre>
 <code>
-rake "default[100, console]"
+rake "default[100, file]"
 </code>
 </pre>
 
@@ -47,7 +47,7 @@ Works nicely. But the following
 
 <pre>
 <code>
-rake default[100, console]
+rake default[100, file]
 </code>
 </pre>
 
