@@ -1,0 +1,65 @@
+---
+title: Command Line Arguments through Rake
+layout: post
+categories: roobs
+---
+
+As you might suppose from this post and a few others, I've been doing a lot of non-Rails Ruby work lately.
+
+As such, my application had a few variables that controlled how much data it would use to generate output, and likewise the manner in which data would be output (i.e. to the terminal vs. file). These variables could be provided via command line, but getting Rake to accept these values took a small bit of work.
+
+<!--more-->
+
+I got pretty tired of adjusting these values in the code for each run of my program, and decided to go ahead and modify my Rake file to accept variables to customize these values from the command line.
+
+A very important part of this is making sure you've set up some default values. This ensures that your Rake script will run predictably and optimally regardless of whether or not the person running it chooses to provide input values.
+
+I've provided a simple example of my "default" task below. This example specifies a top-end default limit of 25 items to process, with output going to the terminal by default.
+
+<pre>
+<code>
+task :default, [:limit, :format] do |t, args|
+  args.with_defaults(:limit => "25", :format => "console")
+  puts "Running default task with #{args.limit} and #{args.format}."
+  Concordance.generate(args.limit)
+  Concordance.print(args.format)
+end
+</code>
+</pre>
+
+While the Rake documentation seems to imply that only parameters with spaces need to be wrapped with quotes when being run from the command line, i.e.:
+
+<pre>
+<code>
+rake "task-name[billy bob, smith]"
+</code>
+</pre>
+
+I've found that any set of multiple parameters need to be wrapped in quotes. For example:
+
+<pre>
+<code>
+rake "default[100, file]"
+</code>
+</pre>
+
+Works nicely. But the following
+
+<pre>
+<code>
+rake default[100, file]
+</code>
+</pre>
+
+Results in:
+
+<pre>
+<code>
+Don't know how to build task 'default[100,'
+</code>
+</pre>
+
+
+
+
+
