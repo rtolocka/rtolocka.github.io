@@ -1,0 +1,129 @@
+---
+layout: default
+title: Resume
+---
+<div class="large-12 columns"> 
+<h4>Contact</h4>
+rich.tolocka@gmail.com
+
+<hr>
+<h4>Summary</h4>
+<p>
+* Technology Executive with over 15 years of experience in software development and related services
+* 10+ years in a client-facing professional services & consulting capacity
+* Expertise in a range of client industries, across commercial, non-profit, and government practices
+* Led and grew software development teams of over 25 people
+* Experience in management of P&L and budgets
+</p>
+
+<hr>
+<h4>Experience</h4>
+*Vice President of Client Services*
+Phase2 Technology - Alexandria VA
+Jan 2011 – present
+
+* Grew revenue from approximately $200k to $750k month across multiple accounts.
+* Led and managed a delivery group responsible for delivery of custom software project and follow-on managed service engagements.
+* Directly managed P&L and budget. Responsible for hire/fire decisions as well as talent selection and evaluation.
+* Served as key customer point  of contact surrounding client satisfaction and future work.
+* Led and/or assisted on sales and capture activities; work with sales functions to convert prospects into successful project engagements.
+* Influence client engagements by strategy, influence, and negotiation.
+
+Key Clients and Projects
+
+* Key Client Highlight One
+* Key Client Highlight Two
+* Key Client Highlight Three
+
+<hr>
+*Director, Project Management*
+Phase2 Technology - Alexandria VA
+Jan 2008 - Dec 2010
+
+* Serve as “chief project manager”, responsible for processes and execution of projects. 
+* Hire and develop project management team and capabilities, responsible for reviews and performance feedback. 
+* Ran the staffing and planning ("traffic") function within the company.
+* Adopt, upgrade, and improve internal supporting tool sets.
+* Performed other duties as required, including analysis, UX, requirements elicitation, testing, and deployment planning.
+
+Key Clients and Projects
+
+* Project managed whitehouse.gov to launch. A high-traffic Drupal site with a complex virtual architecture, this effort required coordination across multiple vendors and took 3 months to design, develop, and deploy.
+* Continued to support whitehouse.gov after launch, handling multiple weekly releases and triaging issues as they arose. Most significantly, project managed the development and rollout of user-generated content to the site.
+* Project managed the House of Representatives CMS site platform. A complex Features-based Drupal platform responsible for driving 90+ House Member sites, effort took 3 months to design, develop, and deploy on client infrastructure.
+* Project managed the World Food Programme-USA site. Site refreshed WFP’s public presentation and featured a complex design and content structure. Effort took 8 weeks to develop and deploy on client infrastructure.
+* Project managed World Bank’s pilot effort for replacement of their main site using Drupal. Site was self-sustaining, ingesting content from multiple and diverse World Bank sites. Effort was developed on extremely tight budget and schedule and was subsequently deployed on plan to positive feedback.
+* Established industry best-practice project management strategies unique to Drupal CMS development & roll-out efforts.
+* Rolled out Rypple, a tool for continuous employee coaching and feedback.
+* Played a significant role in recruiting, building a hiring function from scratch and responsible for facilitating the growth of Phase2 from 20 to 40 people.
+
+Clients included: The Nation, New Republic, Executive Office of the President, Participant Media, National Basketball Players Association, American Enterprise Institute, Rare Conservation, Thomson Reuters, and others.
+
+<hr>
+*Director, Project Management*
+Phase2 Technology - Alexandria VA
+Dec 2006 - Dec 2008
+
+* Execute project management duties in a fast-paced, cost-competitive commercial environment. 
+* Prepare SOWs, kick-off projects, communicate goals, and manage teams. Always be ahead of the customer. 
+* Serve as the primary tester during the course of development and launch. 
+* Co-plan with customers to coordinate difficult site launches involving multiple stakeholders, content migration, and deployment activities. 
+* Monitor and protect the cost, schedule, and scope stuff.
+
+Accomplishments
+
+* Project managed Case Foundation’s / Parade Magazine “America’s Giving Challenge” site, which was featured in Parade magazine. Project featured a cloud-hosted deployment strategy using Amazon S3 and Rightscale, which was unique in those days.
+* Project managed the Xbox Magazine Online, MaximumPC, and MacLife Drupal site development efforts. This was an early attempt to do platform-based development and was a precursor to OpenPublish. Effort saved significant money by re-using shared elements across multiple sites.
+* Project managed the re-launch of ConservationFund.org on Drupal. Solution featured donation integration and constituent management using CiviCRM and Ubercart. Effort required coordination across multiple vendors for IA, creative, and implementation. Project managed all subsequent development efforts for the client, including multiple sites implemented on the original platform.
+* Project managed multiple lightweight Java-based business systems for a variety of clients, including 
+* The Inter-American Development Bank, where I managed development of a web-based system to track and process applicants for financing
+* A local Real Estate firm, where I managed development of a web-based system to track condominium sales, inventory, and leads.
+* The IEEE Computer Society, where I managed development of multiple web-based systems to support client’s accreditations and honors programs.
+* NFL Players Association, where I managed improvements to their existing salary cap systems.
+* Conservation Fund, where I managed development of a web-based grant application and tracking system.
+* Project managed multiple federated identity implementations for clients such as CSC, Dupont, and Pittsburgh Paints.
+* Invented, standardized, and improved internal project reporting processes.
+* Invented, standardized, and improved internal contracting processes, adding greater levels of vendor protection based on lessons learned.
+
+Clients included: Case Foundation, Conservation Fund, IEEE Computer Society, XBox Magazine Online, PCGamer, MaximumPC, BIPAC, Carlyle Group, NFLPA, and others
+
+<hr>
+*Development Team Manager & General Go-Getter*
+AMS / CACI inc. - Fairfax, VA
+Jan 2004 - Dec 2006
+
+* Successfully managed multiple software development projects from inception to closure on $7 million software development engagement.
+* Mastered the complex business processes of the DoD client and enhanced their operations through web-based and middleware-oriented software.
+* Planned and managed multiple teams of engineers, business analysts, and support staff (30+ persons) simultaneously. Applied modern project-management techniques
+to assure on-time / on-scope delivery of software projects.
+* Identified areas where communication across functional teams was lacking, and filled in the gaps with organizational process assets and recurring lifecycle/milestone meetings.
+* Worked to create a repository of re-usable organizational process assets, including procedures, ‘how-to’ documentation, and lessons learned.
+* Led weekly risk identification and mitigation meetings. Led development of a meaningful risk management strategy.
+* Successfully led roll-out of quarterly ‘mini-releases’, each release including defect resolutions, green-field development, and software enhancements. Oversaw 10+ consecutive on-time software releases.
+* Champion of the Enterprise Unified Software Development Process for high-risk engagements.
+* Rolled out modern configuration management practices (CMMI Level 2) and multi-line development techniques.
+
+<hr>
+*Software Engineer*
+AMS Inc - Fairfax VA
+1998 – 2004
+
+* Performed as Java/J2EE software engineer. Involved in complete software development life cycle.
+* Participated in development of complex transactional and expert systems using Swing, Struts, servlets, JSPs, and EJBs.
+* Applied typical J2EE object-oriented patterns and developed business-interface centric systems for the purpose of re-use.
+* Instituted automated and nightly builds for quick integration.
+* Utilized open-source software when appropriate.
+
+<h4>Certifications</h4>
+
+* PMI Project Management Professional (PMP) Certified (2006)
+* Certified ScrumMaster (anticipated April 2011)
+
+<h4>Education & Training</h4>
+
+Bachelor in Business Administration, College of William and Mary
+Advanced Project Management, Learning Tree (2006)
+Project Management for Software Development, Learning Tree (2005)
+Software Quality Assurance, Learning Tree (2004)
+CACI Personnel Management Workshop (2006)
+</div>
