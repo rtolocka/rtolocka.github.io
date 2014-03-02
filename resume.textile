@@ -9,11 +9,11 @@ title: Resume
 <hr>
 <h4>Summary</h4>
 <p>
-* Technology Executive with over 15 years of experience in software development and related services
+* Technology Executive with over 15 years of experience in software development and services
 * 10+ years in a client-facing professional services & consulting capacity
-* Expertise in a range of client industries, across commercial, non-profit, and government practices
+* Expertise in a range of client industries, across commercial, non-profit, and government verticals
+* Experience in management of P&L, budgets, forecasting, and financial reporting
 * Led and grew software development teams of over 25 people
-* Experience in management of P&L and budgets
 </p>
 
 <hr>
@@ -22,29 +22,31 @@ title: Resume
 Phase2 Technology - Alexandria VA
 Jan 2011 – present
 
-* Grew revenue from approximately $200k to $750k month across multiple accounts.
-* Led and managed a delivery group responsible for delivery of custom software project and follow-on managed service engagements.
+* Grew revenue from approximately $200k to $750k per month across multiple accounts.
+* Led and managed a professional services group; responsible for delivery of custom software project and follow-on managed service engagements.
 * Directly managed P&L and budget. Responsible for hire/fire decisions as well as talent selection and evaluation.
-* Served as key customer point  of contact surrounding client satisfaction and future work.
-* Led and/or assisted on sales and capture activities; work with sales functions to convert prospects into successful project engagements.
+* Served as key customer point of trust surrounding engagement success and client satisfaction.
+* Led and/or assisted on sales and capture activities; worked with sales functions to shape opportunites into successful client engagements.
 * Influence client engagements by strategy, influence, and negotiation.
+* Won follow-on work as required to meet revenue targets. 
+* Write and negotiate contracts as required.
 
 <em>Key Clients and Projects</em>
 
-* Key Client Highlight One
-* Key Client Highlight Two
-* Key Client Highlight Three
+* Somethin' goes here.
+* Somethin' goes here.
+* Somethin' goes here.
 
 <hr>
-*Director, Project Management*
+*Director of Project Management*
 Phase2 Technology - Alexandria VA
 Jan 2008 - Dec 2010
 
-* Serve as “chief project manager”, responsible for processes and execution of projects. 
-* Hire and develop project management team and capabilities, responsible for reviews and performance feedback. 
-* Ran the staffing and planning ("traffic") function within the company.
+* Serve as “chief project manager”, responsible for delivery processes used to successfully execute projects.
+* Hire, manage, and coach project management team and capabilities; responsible for reviews and performance feedback.
+* Execute and lead the staffing and planning ("traffic") function within the company.
 * Adopt, upgrade, and improve internal supporting tool sets.
-* Performed other duties as required, including analysis, UX, requirements elicitation, testing, and deployment planning.
+* Performed other software duties as required, including analysis, UX, requirements elicitation, testing, and deployment planning.
 
 <em>Key Clients and Projects</em>
 
@@ -65,7 +67,7 @@ Phase2 Technology - Alexandria VA
 Dec 2006 - Dec 2008
 
 * Execute project management duties in a fast-paced, cost-competitive commercial environment. 
-* Prepare SOWs, kick-off projects, communicate goals, and manage teams. Always be ahead of the customer. 
+* Prepare SOWs, kick-off projects, communicate goals, and manage teams.
 * Serve as the primary tester during the course of development and launch. 
 * Co-plan with customers to coordinate difficult site launches involving multiple stakeholders, content migration, and deployment activities. 
 * Monitor and protect the cost, schedule, and scope stuff.
