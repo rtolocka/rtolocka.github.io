@@ -4,7 +4,7 @@ title: Resume
 ---
 <div class="large-12 columns"> 
 <h4>Contact</h4>
-rich.tolocka@gmail.com
+<a href="mailto:rich.tolocka@gmail.com?Subject=Contact">rich.tolocka@gmail.com</a>
 
 <hr>
 <h4>Summary</h4>
@@ -29,7 +29,7 @@ Jan 2011 – present
 * Led and/or assisted on sales and capture activities; work with sales functions to convert prospects into successful project engagements.
 * Influence client engagements by strategy, influence, and negotiation.
 
-Key Clients and Projects
+<em>Key Clients and Projects</em>
 
 * Key Client Highlight One
 * Key Client Highlight Two
@@ -46,7 +46,7 @@ Jan 2008 - Dec 2010
 * Adopt, upgrade, and improve internal supporting tool sets.
 * Performed other duties as required, including analysis, UX, requirements elicitation, testing, and deployment planning.
 
-Key Clients and Projects
+<em>Key Clients and Projects</em>
 
 * Project managed whitehouse.gov to launch. A high-traffic Drupal site with a complex virtual architecture, this effort required coordination across multiple vendors and took 3 months to design, develop, and deploy.
 * Continued to support whitehouse.gov after launch, handling multiple weekly releases and triaging issues as they arose. Most significantly, project managed the development and rollout of user-generated content to the site.
@@ -70,7 +70,7 @@ Dec 2006 - Dec 2008
 * Co-plan with customers to coordinate difficult site launches involving multiple stakeholders, content migration, and deployment activities. 
 * Monitor and protect the cost, schedule, and scope stuff.
 
-Accomplishments
+<em>Key Clients and Projects</em>
 
 * Project managed Case Foundation’s / Parade Magazine “America’s Giving Challenge” site, which was featured in Parade magazine. Project featured a cloud-hosted deployment strategy using Amazon S3 and Rightscale, which was unique in those days.
 * Project managed the Xbox Magazine Online, MaximumPC, and MacLife Drupal site development efforts. This was an early attempt to do platform-based development and was a precursor to OpenPublish. Effort saved significant money by re-using shared elements across multiple sites.
@@ -121,9 +121,9 @@ AMS Inc - Fairfax VA
 
 <h4>Education & Training</h4>
 
-Bachelor in Business Administration, College of William and Mary
-Advanced Project Management, Learning Tree (2006)
+* Bachelor in Business Administration, College of William and Mary
+* Advanced Project Management, Learning Tree (2006)
 Project Management for Software Development, Learning Tree (2005)
-Software Quality Assurance, Learning Tree (2004)
-CACI Personnel Management Workshop (2006)
+* Software Quality Assurance, Learning Tree (2004)
+* CACI Personnel Management Workshop (2006)
 </div>
