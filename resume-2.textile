@@ -9,8 +9,7 @@ rich.tolocka@gmail.com
 <hr>
 <h4>Summary</h4>
 <p>
-<ul>
-<li> Technology Executive with over 15 years of experience in software development and related services</li>
+* Technology Executive with over 15 years of experience in software development and related services
 * 10+ years in a client-facing professional services & consulting capacity
 * Expertise in a range of client industries, across commercial, non-profit, and government practices
 * Led and grew software development teams of over 25 people
@@ -19,9 +18,8 @@ rich.tolocka@gmail.com
 
 <hr>
 <h4>Experience</h4>
-
+*Vice President of Client Services*
 Phase2 Technology - Alexandria VA
-VP, Client Services
 Jan 2011 – present
 
 * Grew revenue from approximately $200k to $750k month across multiple accounts.
@@ -37,8 +35,9 @@ Key Clients and Projects
 * Key Client Highlight Two
 * Key Client Highlight Three
 
+<hr>
+*Director, Project Management*
 Phase2 Technology - Alexandria VA
-Director, Project Management
 Jan 2008 - Dec 2010
 
 * Serve as “chief project manager”, responsible for processes and execution of projects. 
@@ -60,9 +59,9 @@ Key Clients and Projects
 
 Clients included: The Nation, New Republic, Executive Office of the President, Participant Media, National Basketball Players Association, American Enterprise Institute, Rare Conservation, Thomson Reuters, and others.
 
-Phase2 Technology
-Alexandria VA
-Director, Project Management
+<hr>
+*Director, Project Management*
+Phase2 Technology - Alexandria VA
 Dec 2006 - Dec 2008
 
 * Execute project management duties in a fast-paced, cost-competitive commercial environment. 
@@ -88,9 +87,9 @@ Accomplishments
 
 Clients included: Case Foundation, Conservation Fund, IEEE Computer Society, XBox Magazine Online, PCGamer, MaximumPC, BIPAC, Carlyle Group, NFLPA, and others
 
-AMS / CACI inc.
-Fairfax, VA
-Development Team Manager & General Go-Getter
+<hr>
+*Development Team Manager & General Go-Getter*
+AMS / CACI inc. - Fairfax, VA
 Jan 2004 - Dec 2006
 
 * Successfully managed multiple software development projects from inception to closure on $7 million software development engagement.
@@ -104,10 +103,10 @@ to assure on-time / on-scope delivery of software projects.
 * Champion of the Enterprise Unified Software Development Process for high-risk engagements.
 * Rolled out modern configuration management practices (CMMI Level 2) and multi-line development techniques.
 
-AMS Inc
+<hr>
+*Software Engineer*
+AMS Inc - Fairfax VA
 1998 – 2004
-Fairfax VA
-Software Engineer
 
 * Performed as Java/J2EE software engineer. Involved in complete software development life cycle.
 * Participated in development of complex transactional and expert systems using Swing, Struts, servlets, JSPs, and EJBs.
@@ -115,12 +114,12 @@ Software Engineer
 * Instituted automated and nightly builds for quick integration.
 * Utilized open-source software when appropriate.
 
-CERTIFICATIONS:
+<h4>Certifications</h4>
 
 * PMI Project Management Professional (PMP) Certified (2006)
 * Certified ScrumMaster (anticipated April 2011)
 
-EDUCATION AND TRAINING:
+<h4>Education & Training</h4>
 
 Bachelor in Business Administration, College of William and Mary
 Advanced Project Management, Learning Tree (2006)
