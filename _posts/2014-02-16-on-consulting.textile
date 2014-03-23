@@ -10,7 +10,9 @@ In retrospect, it's pretty clear why 'consultant' was a quick and easy answer fo
 
 After many years in the IT business in a variety of client-facing roles, I think I can now speak (or in this case write) upon what I regard as the key attributes that consultants have - or in the case of aspiring consultants, what skills they should work to develop.
 
-* Consultants have listening skills
+<!--more-->
+
+<h4>Consultants have listening skills</h4>
 
 Consultants are careful listeners. Most consulting engagements begin with a description of the problem. Without careful and attentive listening, the consultant might miss a key element of the problem or what the client has already done to try and solve it.
 
@@ -22,7 +24,7 @@ Knowing that communication is a two-way process, one of the most important thing
 
 In consulting, very often the best advice I give is: "Understand your client!" When sending a message, it is very important to understand the receiver of that message, and how they will receive it. Enough said, or at least as much as I can say here!
 
-* Consultants seek business value
+<h4>Consultants seek business value</h4>
 
 A common question that any consultant will grapple with is: "Which change is worth pursuing?" Within your client organization, opinions may vary widely on what improvements or changes should be made. Moreover, your own success will be judged based not just on your ability to effect change, but rather did you recommend and pursue the "right" change?
 
@@ -30,19 +32,19 @@ The answer is: "Seek business value." This sounds like a cliche, but it's not. T
 
 Newer consultants still trying to find their way may find themselves filled with uncertainty surrounding what changes to pursue. While business metrics help us select appropriate changes, where do those ideas come from? The answer - from the consultant's toolkit, with some creativity tossed into the mix. 
 
-* Consultants have a toolkit
+<h4>Consultants have a toolkit</h4>
 
 Possibly the easiest of all these to understand, yet the hardest to get. A "toolkit" can be understood to be 'subject matter expertise' - although given that I'm from a software background, I prefer the term 'domain expert'. Simply put, you need to have some background in what you're consulting in, and to a certain extent, an understanding of the client's business space. With experience, you come to know common solutions for common problems and become skilled at devising new solutions. 
 
 The best consultants I've met are interdisciplinary - they combine knowledge of business fundamentals with deep technical expertise in a few different spaces and can quickly learn enough of the client's business to engage quickly and establish their expertise quickly. As you might imagine, no client wants to pay a consultant to get up to speed on their business model, their cost structure, etc. A consultant brings to the table a working knowledge of a what models are successful for a particular type of business.
 
-* Consultants can influence
+<h4>Consultants can influence</h4>
 
 As a consultant, your job is likely to bring change to the organization. To do this, you'll likely need to "win hearts and minds". Consider this: what good is a high-value solution if no one buys into it? In many ways, a consultant's success is limited not just by their toolkit or the effectiveness of their proposed solution, but very often the degree to which they can achieve buy-in.
 
 Influence is a very personal thing. Each person has different ways of influencing others; some win on likability, others on credibility. Influence isn't substitute for other skills and techniques; but influence is often the difference maker in getting those solutions implemented.
 
-* Consultants are invested in their client's success
+<h4>Consultants are invested in their client's success</h4>
 
 Great consultants are truly invested in their client's success. For me, 'investment' means 'caring about the client's problem with a sense of urgency and importance.'
 
