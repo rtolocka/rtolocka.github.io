@@ -6,7 +6,7 @@ categories: consulting
 
 As a college student, if someone asked me what I wanted to be after college, my answer was, "I want to be a consultant." To my recollection, that was true of very many of my peers. I'm not sure many of us even really understood what that term meant. I'm guessing (and hoping) most of my peers do now!
 
-In retrospect, it's pretty clear why 'consultant' was a quick and easy answer for a college student. After all, 'consultant' comes with it some degree of prestige; after all, how can you be a 'consultant' without knowledge? Powerful knowledge, I'm sure we surmised on some level. The painful irony for most of us graduating was that it would be many years before our dream was realized; most of us discovered soon after starting our first job that to 'consult' you first had to know something! (ouch)
+In retrospect, it's pretty clear why 'consultant' was a quick and easy answer for a college student. After all, 'consultant' comes with it some degree of prestige; after all, how can you be a 'consultant' without knowledge? Powerful knowledge, I'm sure we surmised on some level. The painful truth for most of us graduating was that it would be many years before our dream was realized; most of us discovered soon after starting our first job that to 'consult' you first had to know something! (ouch)
 
 After many years in the IT business in a variety of client-facing roles, I think I can now speak (or in this case write) upon what I regard as the key attributes that consultants have - or in the case of aspiring consultants, what skills they should work to develop.
 
@@ -20,9 +20,9 @@ On a more subtle level, the consultant is working to understand body language, t
 
 A technique that can be employed (and I recommend it for those getting their start) is Active Listening. Active Listening is employed in a variety of places beyond consulting, but I've found it quite useful in this area because it is very difficult to miscommunicate or find yourself off in "left field", waiting for the client to meet you there.
 
-Knowing that communication is a two-way process, one of the most important things a consultant can 'message' back to the customer is empathy. I've seen consultants fail in their job because the customer never really believed that the consultant cared about their problem. Having empathy can mean the difference between being effective at effecting change and not.
+Knowing that communication is a two-way process, one of the most important things a consultant can 'message' back to the customer is empathy. I've seen consultants fail in their job because the customer never really believed that the consultant cared about their problem. Having empathy can mean the difference between effecting change and not.
 
-In consulting, very often the best advice I give is: "Understand your client!" When sending a message, it is very important to understand the receiver of that message, and how they will receive it. Enough said, or at least as much as I can say here!
+In consulting, very often the best advice I give is: "Understand your client!" When sending a message, it is very important to understand the receiver of that message, and how they will receive it. Know their back-story and where they are coming from before you speak. Enough said, or at least as much as I can say here!
 
 <h4>Consultants seek business value</h4>
 
@@ -34,15 +34,15 @@ Newer consultants still trying to find their way may find themselves filled with
 
 <h4>Consultants have a toolkit</h4>
 
-Possibly the easiest of all these to understand, yet the hardest to get. A "toolkit" can be understood to be 'subject matter expertise' - although given that I'm from a software background, I prefer the term 'domain expert'. Simply put, you need to have some background in what you're consulting in, and to a certain extent, an understanding of the client's business space. With experience, you come to know common solutions for common problems and become skilled at devising new solutions. 
+Possibly the easiest of all these to understand, yet the hardest to obtain. A "toolkit" can be understood to be 'subject matter expertise' - although given that I'm from a software background, I prefer the term 'domain expert'. Simply put, you need to have some background in what you're consulting in, and to a certain extent, an understanding of the client's business space. With experience, you come to know common solutions for common problems and become skilled at devising new solutions. 
 
-The best consultants I've met are interdisciplinary - they combine knowledge of business fundamentals with deep technical expertise in a few different spaces and can quickly learn enough of the client's business to engage quickly and establish their expertise quickly. As you might imagine, no client wants to pay a consultant to get up to speed on their business model, their cost structure, etc. A consultant brings to the table a working knowledge of a what models are successful for a particular type of business.
+The best consultants I've met are interdisciplinary - they combine knowledge of business fundamentals with deep technical expertise in a few different spaces. They can quickly learn enough of the client's business to engage and establish their expertise rapidly. As you might imagine, no client wants to pay a consultant to get up to speed on their business model, their cost structure, etc. A consultant brings to the table a working knowledge of a what models are successful for a particular type of business.
 
 <h4>Consultants can influence</h4>
 
 As a consultant, your job is likely to bring change to the organization. To do this, you'll likely need to "win hearts and minds". Consider this: what good is a high-value solution if no one buys into it? In many ways, a consultant's success is limited not just by their toolkit or the effectiveness of their proposed solution, but very often the degree to which they can achieve buy-in.
 
-Influence is a very personal thing. Each person has different ways of influencing others; some win on likability, others on credibility. Influence isn't substitute for other skills and techniques; but influence is often the difference maker in getting those solutions implemented.
+Influence is a very personal thing. Each person has different ways of influencing others; some win on likability, others on credibility, others on relationships. Influence isn't a substitute for other skills and techniques; but influence is often the difference maker in getting those solutions implemented.
 
 <h4>Consultants are invested in their client's success</h4>
 
@@ -50,8 +50,5 @@ Great consultants are truly invested in their client's success. For me, 'investm
 
 One of the truisms I've seen is that a failed consultant will very rarely be portrayed as unintellgient, or unwise, or unable to effect change. Instead, that failed consultant will usually be described by the client as not caring, or being mostly motivated to help themselves first, and the client second.
 
-A good consultant internalizes the knowledge that if they fail in their job, people's lives and livelihoods will be affected in a very negative way. This means going above and beyond to help the customer succeed. Consultants take their jobs seriously, and understand that if the problem was easy to solve, or if the stakes weren't high, they wouldn't have been called in the first place!
-
-
-
+A good consultant internalizes the knowledge that if they fail in their job, people's lives and livelihoods will be affected in a very negative way. This means going above and beyond to help the customer succeed, if required. Consultants take their jobs seriously, and understand that if the problem was easy to solve, or if the stakes weren't high, they wouldn't have been called in the first place - and act accordingly!
 
